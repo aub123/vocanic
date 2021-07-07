@@ -63,6 +63,21 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
   </head>
   <body
   class=" look-sheet-bkg"
