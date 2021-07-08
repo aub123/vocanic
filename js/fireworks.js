@@ -1,175 +1,133 @@
- var fgm = {
-            on: function (element, type, handler) {
-                return element.addEventListener ? element.addEventListener(type, handler, false) : element.attachEvent("on" + type, handler)
-            },
-            un: function (element, type, handler) {
-                return element.removeEventListener ? element.removeEventListener(type, handler, false) : element.detachEvent("on" + type, handler)
-            },
-            bind: function (object, handler) {
-                return function () {
-                    return handler.apply(object, arguments)
-                }
-            },
-            randomRange: function (lower, upper) {//产生范围在lower~upper的随机数
-                return Math.floor(Math.random() * (upper - lower + 1) + lower)
-            },
-            getRanColor: function () {//随机获得十六进制颜色
-                var str = this.randomRange(0, 0xFFFFFF).toString(16);
-                while (str.length < 6) str = "0" + str;
-                return "#" + str
-            }
-        };
-        //初始化对象
-        function FireWorks() {
-            this.type = 0;
-            this.timer = null;
-            this.fnManual = fgm.bind(this, this.manual)
-        }
-        FireWorks.prototype = {
-            initialize: function () {
-                clearTimeout(this.timer);
-                fgm.un(document, "click", this.fnManual);
-                switch (this.type) {
-                    case 1:
-                        fgm.on(document, "click", this.fnManual);
-                        break;
-                    case 2:
-                        this.auto();
-                        break;
-                }
-                ;
-            },
-            manual: function (event) {
-                event = event || window.event;
-                this.__create__({
-                    x: event.clientX,
-                    y: event.clientY
-                });
-            },
-
-            auto: function () {
-                var that = this;
-                that.timer = setTimeout(function () {
-                    that.__create__({
-                        x: fgm.randomRange(50, document.documentElement.clientWidth - 50),
-                        y: fgm.randomRange(50, document.documentElement.clientHeight - 150)
-                    })
-                    that.auto();
-                }, fgm.randomRange(900, 1100))
-            },
-            __create__: function (param) {
-                //param即鼠标点击点（即烟花爆炸点）
-                var that = this;
-                var oEntity = null;
-                var oChip = null;
-                var aChip = [];
-                var timer = null;
-                var oFrag = document.createDocumentFragment();
-
-                oEntity = document.createElement("div");
-                with (oEntity.style) {//烟花上升过程实体初始化
-                    position = "absolute";
-                    //初始位置距网页顶部为：整个网页的高度（处于网页底部）
-                    top = document.documentElement.clientHeight + "px";
-                    left = param.x + "px";
-                    width = "4px";
-                    height = "30px";
-                    borderRadius = "4px";
-                    background = fgm.getRanColor();
-                }
-                ;
-                document.body.appendChild(oEntity);
-                //window.setInterval方法 该方法使得一个函数每隔固定时间被调用一次
-//                console.log(param.y);
-                oEntity.timer = setInterval(function () {
-//                    console.log(oEntity.offsetTop);
-//                    console.log(oEntity.style.top);
-                    oEntity.style.top = oEntity.offsetTop - 20 + "px";
-                    //判断烟花是否上升到或者第一次超过上次鼠标点击位置
-                    if (oEntity.offsetTop <= param.y) {
-                        //烟花爆炸
-                        clearInterval(oEntity.timer);
-                        document.body.removeChild(oEntity);
-                        (function () {
-                            //在50-100之间随机生成碎片
-                            //由于IE浏览器处理效率低, 随机范围缩小至20-30
-                            //自动放烟花时, 随机范围缩小至20-30
-                            var len = (/msie/i.test(navigator.userAgent) || that.type == 2) ? fgm.randomRange(20, 30) : fgm.randomRange(50, 100)
-                            //产生所有烟花爆炸颗粒实体
-                            for (i = 0; i < len; i++) {
-                                //烟花颗粒形态实体
-                                oChip = document.createElement("div");
-                                with (oChip.style) {
-                                    position = "absolute";
-                                    top = param.y + "px";
-                                    left = param.x + "px";
-                                    width = "4px";
-                                    height = "4px";
-                                    overflow = "hidden";
-                                    borderRadius = "4px";
-                                    background = fgm.getRanColor();
-                                }
-                                ;
-                                oChip.speedX = fgm.randomRange(-20, 20);
-                                oChip.speedY = fgm.randomRange(-20, 20);
-                                oFrag.appendChild(oChip);
-                                aChip[i] = oChip
-                            }
-                            ;
-                            document.body.appendChild(oFrag);
-                            timer = setInterval(function () {
-                                for (i = 0; i < aChip.length; i++) {
-                                    var obj = aChip[i];
-                                    with (obj.style) {
-                                        top = obj.offsetTop + obj.speedY + "px";
-                                        left = obj.offsetLeft + obj.speedX + "px";
-                                    }
-                                    ;
-                                    obj.speedY++;
-                                    //判断烟花爆炸颗粒是否掉落至窗体之外，为真则remove
-                                    //splice() 方法可删除从 index 处开始的零个或多个元素
-                                    (obj.offsetTop < 0 || obj.offsetLeft < 0 || obj.offsetTop > document.documentElement.clientHeight || obj.offsetLeft > document.documentElement.clientWidth) && (document.body.removeChild(obj), aChip.splice(i, 1))
-                                }
-                                ;
-                                //判断烟花爆炸颗粒是否全部remove，为真则clearInterval(timer);
-                                !aChip[0] && clearInterval(timer);
-                            }, 30)
-                        })()
-                    }
-                }, 30)
-            }
-        };
-
-        fgm.on(window, "load", function () {
-            var oTips = document.getElementById("tips");
-            var aBtn = oTips.getElementsByTagName("a");
-            var oFireWorks = new FireWorks();
-
-            fgm.on(oTips, "click", function (event) {
-                var oEvent = event || window.event;
-                var oTarget = oEvent.target || oEvent.srcElement;
-                var i = 0;
-                if (oTarget.tagName.toUpperCase() == "A") {
-                    for (i = 0; i < aBtn.length; i++) aBtn[i].className = "";
-                    switch (oTarget.id) {
-                        case "manual":
-                            oFireWorks.type = 1;
-                            break;
-                        case "auto":
-                            oFireWorks.type = 2;
-                            break;
-                        case "stop":
-                            oFireWorks.type = 0;
-                            break;
-                    }
-                    oFireWorks.initialize();
-                    oTarget.className = "active";
-                    //阻止浏览器默认的事件冒泡行为
-                    oEvent.stopPropagation ? oEvent.stopPropagation() : oEvent.cancelBubble = true
-                }
-            });
-        });
-        fgm.on(document, "contextmenu", function (event) {
-            var oEvent = event || window.event;
-            oEvent.preventDefault ? oEvent.preventDefault() : oEvent.returnValue = false
-        });
+function clickEffect() {
+  let balls = [];
+  let longPressed = false;
+  let longPress;
+  let multiplier = 0;
+  let width, height;
+  let origin;
+  let normal;
+  let ctx;
+  const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+  const canvas = document.createElement("canvas");
+  document.body.appendChild(canvas);
+  canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+  const pointer = document.createElement("span");
+  pointer.classList.add("pointer");
+  document.body.appendChild(pointer);
+ 
+  if (canvas.getContext && window.addEventListener) {
+    ctx = canvas.getContext("2d");
+    updateSize();
+    window.addEventListener('resize', updateSize, false);
+    loop();
+    window.addEventListener("mousedown", function(e) {
+      pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+      document.body.classList.add("is-pressed");
+      longPress = setTimeout(function(){
+        document.body.classList.add("is-longpress");
+        longPressed = true;
+      }, 500);
+    }, false);
+    window.addEventListener("mouseup", function(e) {
+      clearInterval(longPress);
+      if (longPressed == true) {
+        document.body.classList.remove("is-longpress");
+        pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+        longPressed = false;
+      }
+      document.body.classList.remove("is-pressed");
+    }, false);
+    window.addEventListener("mousemove", function(e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      pointer.style.top = y + "px";
+      pointer.style.left = x + "px";
+    }, false);
+  } else {
+    console.log("canvas or addEventListener is unsupported!");
+  }
+ 
+ 
+  function updateSize() {
+    canvas.width = window.innerWidth * 2;
+    canvas.height = window.innerHeight * 2;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.scale(2, 2);
+    width = (canvas.width = window.innerWidth);
+    height = (canvas.height = window.innerHeight);
+    origin = {
+      x: width / 2,
+      y: height / 2
+    };
+    normal = {
+      x: width / 2,
+      y: height / 2
+    };
+  }
+  class Ball {
+    constructor(x = origin.x, y = origin.y) {
+      this.x = x;
+      this.y = y;
+      this.angle = Math.PI * 2 * Math.random();
+      if (longPressed == true) {
+        this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+      } else {
+        this.multiplier = randBetween(6, 12);
+      }
+      this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+      this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+      this.r = randBetween(8, 12) + 3 * Math.random();
+      this.color = colours[Math.floor(Math.random() * colours.length)];
+    }
+    update() {
+      this.x += this.vx - normal.x;
+      this.y += this.vy - normal.y;
+      normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+      normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+      this.r -= 0.3;
+      this.vx *= 0.9;
+      this.vy *= 0.9;
+    }
+  }
+ 
+  function pushBalls(count = 1, x = origin.x, y = origin.y) {
+    for (let i = 0; i < count; i++) {
+      balls.push(new Ball(x, y));
+    }
+  }
+ 
+  function randBetween(min, max) {
+    return Math.floor(Math.random() * max) + min;
+  }
+ 
+  function loop() {
+    ctx.fillStyle = "rgba(255, 255, 255, 0)";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < balls.length; i++) {
+      let b = balls[i];
+      if (b.r < 0) continue;
+      ctx.fillStyle = b.color;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+      ctx.fill();
+      b.update();
+    }
+    if (longPressed == true) {
+      multiplier += 0.2;
+    } else if (!longPressed && multiplier >= 0) {
+      multiplier -= 0.4;
+    }
+    removeBall();
+    requestAnimationFrame(loop);
+  }
+ 
+  function removeBall() {
+    for (let i = 0; i < balls.length; i++) {
+      let b = balls[i];
+      if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+        balls.splice(i, 1);
+      }
+    }
+  }
+}
