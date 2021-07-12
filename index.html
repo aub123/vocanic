@@ -52,20 +52,30 @@
 <link rel="stylesheet" href="/vocanic/css/style.css" />
 <link rel="stylesheet" href="/vocanic/css/syntax.css" />
 <script type="text/javascript" src="/vocanic/js/main.js"></script>
-<script type="text/javascript" src="/vocanic/js/fireworks.js"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
   </head>
   <body
   class=""
   lang="en-us">
-  <script>
-        clickEffect(); //调用事件函数
-</script>
   <div class="nav-bkg drop-shadow">
     <nav class="content-container pagewide-bar-padding">
       <span class="divider">/ </span>
@@ -76,12 +86,6 @@
           <li>
             <a href="/vocanic/post/introduction/">
               <span class="post-title">Introduction</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="/vocanic/">
-              <span class="post-title">myBlogger</span>
             </a>
           </li>
 

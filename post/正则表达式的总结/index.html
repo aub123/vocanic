@@ -45,7 +45,7 @@
 <meta itemprop="name" content="正则表达式的总结">
 <meta itemprop="description" content="对一些常见JS正则表达式的总结"><meta itemprop="datePublished" content="2021-07-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-07-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="51">
+<meta itemprop="wordCount" content="52">
 <meta itemprop="keywords" content="WEB前端," />
 
 
@@ -98,12 +98,6 @@
 
           <li>
             <a href="/vocanic/">
-              <span class="post-title">myBlogger</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="/vocanic/">
               <span class="post-title">vocanic</span>
             </a>
           </li>
@@ -137,8 +131,7 @@
   
   
   <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
-    <p>#正则表达式</p>
-<blockquote>
+    <blockquote>
 <p>基础语法</p>
 <blockquote>
 <p>/正则表达式主体/修饰符(可选)</p>
@@ -157,8 +150,8 @@
 特殊符号包括: ~!@#$%^&amp;*<br>
 *正则表达式如下:*<br>
 <code>&lt;/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&amp;*])[\da-zA-Z~!@#$%^&amp;*]{8,}$/&gt; </code><br>
-(?=.**[a-z]+$) 在字符某一位置存在a-z的字符<br>
-{8.16}$ 在</p>
+<code>(?=.**[a-z]+$)</code> 在字符某一位置存在a-z的字符<br>
+<code>{8.16}$</code> 规定密码长度在8-16位</p>
 </blockquote>
 <p>之前改上网认证正则写过一个实例</p>
 <blockquote>
@@ -175,7 +168,10 @@ return false;
 } 
 </code></pre></blockquote>
 </blockquote>
-<p>正则看起来很乱，但其实还是有规律可循的。最重要的还是在写代码之前把自己的逻辑理清楚，核心思想就是排列组合的穷举方法，把该判断的情况都列出来，最后加上一些主体函数的操作就能实现正则的验证。</p>
+<hr>
+<p>正则看起来很乱，但其实还是有规律可循的。<br>
+最重要的还是在写代码之前把自己的逻辑理清楚，核心思想就是排列组合的穷举方法，把该判断的情况都列出来。<br>
+最后加上一些主体函数的操作就能实现正则的验证。</p>
 
   </div>
 </article>
@@ -190,7 +186,9 @@ return false;
       </a>
       
       
-        <span class="flex-row v-center"></span>
+        <a href="https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: Git 的命令行常见使用总结</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
       
       </nav>
     </div>
