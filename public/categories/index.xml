@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on vocanic myBlogger</title>
+    <link>https://aub123.github.io/vocanic/categories/</link>
+    <description>Recent content in Categories on vocanic myBlogger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2011-2020 Fabian Tamp</copyright>
+    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS</title>
+      <link>https://aub123.github.io/vocanic/categories/js/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aub123.github.io/vocanic/categories/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feelings</title>
+      <link>https://aub123.github.io/vocanic/categories/feelings/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aub123.github.io/vocanic/categories/feelings/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
