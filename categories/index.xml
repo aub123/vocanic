@@ -1,108 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vocanic myBlogger</title>
-    <link>https://aub123.github.io/vocanic/</link>
-    <description>Recent content on vocanic myBlogger</description>
+    <title>Categories on vocanic myBlogger</title>
+    <link>https://aub123.github.io/vocanic/categories/</link>
+    <description>Recent content in Categories on vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>如何用Turtle库画出一坨粑粑</title>
-      <link>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
+      <title>Python</title>
+      <link>https://aub123.github.io/vocanic/categories/python/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
-      <description>#这篇文章教你如何用Turtle库画出一坨粑粑
-首先，你需要的工具有：Pycharm(集成环境&amp;amp;编译器),Phython 3.x 废话不多说代码贴图：
-import turtle #导入Turtle库turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色turtle.begin_fill() #开始填充turtle.pensize(2) #海龟的腰围turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色turtle.penup() #海龟飞起，不留痕迹turtle.fd(-50) #海龟向左移动50单位turtle.pendown() #海龟落下，开始痕迹turtle.fd(100) #向右100单位turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三turtle.fd(50)turtle.fd(-30)turtle.circle(-15,-180)turtle.fd(-15)turtle.circle(10,140)turtle.fd(20)turtle.circle(1,160)turtle.fd(16)turtle.circle(-1,120)turtle.fd(25)turtle.circle(10,180)turtle.fd(10)turtle.fd(-20)turtle.circle(-15,-180)turtle.fd(-30)turtle.fd(47)turtle.circle(16,152)turtle.pendown()turtle.end_fill() #最后进行包裹区域的填充turtle.done() #海龟全程结束画图</description>
+      <guid>https://aub123.github.io/vocanic/categories/python/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Git 的命令行常见使用总结</title>
-      <link>https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>#Git 的常见情况
- 一、已有一个仓库，想把本地项目push到仓库内该这样做：
- 1.在本地仓库目录的cmd内输入以下命令：
- git init 进行初始化本地仓库
-git add . 将已有的项目文件全部添加到缓存区
-git commit -m &amp;quot;我是注释&amp;quot;提交已有的项目至仓库内，并在引号内添加注释
-   2.在云端确认自己的仓库，并复制下SSH或者HTTP方式下的网址,以我的博客为例
- git remote add origin https://github.com/aub123/vocanic.git
-PS:两种方式的区别是SSH密钥将密钥放在GITHUB之后可以不用再次验证，而HTTP方式需要每次提交时进行网页手动验证，或者输入密码验证
-   3.进行本地至云端的提交
- git push origin master将代码提交到master分支上
-此时登录你的github网页应该已经显示你的提交记录了。
-    二、从网站克隆（下载）一个仓库，并进行修改
- 1.在一个你想存放代码的目录，打开 cmd 输入以下命令对代码进行克隆（下载）(仍然以我博客为例)
- git clone https://github.com/aub123/vocanic.git 对现有仓库下载
-git pull https://github.com/aub123/vocanic.git 更新最新代码状态
-   2.对代码进行修改后，应该这样提交：
- git status 查看你修改的代码文件状态
-git add . 将修改的代码添加到缓存区
-git commit -m &amp;quot;我是注释&amp;quot; 提交到云端并注释</description>
-    </item>
-    
-    <item>
-      <title>正则表达式的总结</title>
-      <link>https://aub123.github.io/vocanic/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+      <title>JS</title>
+      <link>https://aub123.github.io/vocanic/categories/js/</link>
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
-      <description>基础语法
- /正则表达式主体/修饰符(可选)
- 常见的正则情况
- (?![0-9]+$) 这句意思是设定后面不能为纯数字
-(?![a-z]+$) 这句意思是设定后面不能为纯小写字母
-(?![0-9a-z]+$) 不能为小写字母与数字
-(?![0-9A-Z]+$) 不能为大写字母与数字
-(?![0-9a-zA-Z]+$) 不能为大写，小写字母与数字
- 实例
- 必须包含数字、英文字母、特殊符号且大于等于8位
-特殊符号包括: ~!@#$%^&amp;amp;*
-*正则表达式如下:*
-&amp;lt;/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&amp;amp;*])[\da-zA-Z~!@#$%^&amp;amp;*]{8,}$/&amp;gt; 
-(?=.**[a-z]+$) 在字符某一位置存在a-z的字符
-{8.16}$ 规定密码长度在8-16位
- 之前改上网认证正则写过一个实例
- function pswTest() { //对密码强度进行验证，大小写字母，特殊字符，数字，四选三，在8位数以上var psw = document.getElementsByName(&amp;quot;password&amp;quot;)[0].value; var testPassword = /^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{8,}$/; if (testPassword.test(psw) === false){ alert(&amp;quot;修改密码后再尝试登录&amp;quot;); return false; }else return true; //函数返回的是一个布尔值，需要在JS主体对返回值进行判断 //然后进行相关操作}    正则看起来很乱，但其实还是有规律可循的。
-最重要的还是在写代码之前把自己的逻辑理清楚，核心思想就是排列组合的穷举方法，把该判断的情况都列出来。
-最后加上一些主体函数的操作就能实现正则的验证。</description>
+      <guid>https://aub123.github.io/vocanic/categories/js/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>My Personal Introduction</title>
-      <link>https://aub123.github.io/vocanic/post/introduction/</link>
+      <title>feelings</title>
+      <link>https://aub123.github.io/vocanic/categories/feelings/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/introduction/</guid>
-      <description>火山 vocanic   studys in the Computer School of HDU,
-  is one of the REDHOME members and also the Deputy director of the Office in HDU sports club.
-  loves singing and watching movies, is optimistic, outgoing and always ready to make new friends.
-  ###welcome to be my parter to make progress in life and study!
- My Github Link
-  QQ NUMBER: 2546319206</description>
-    </item>
-    
-    <item>
-      <title>为什么想到要建一个博客</title>
-      <link>https://aub123.github.io/vocanic/post/reflectionreason/</link>
-      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://aub123.github.io/vocanic/post/reflectionreason/</guid>
-      <description>The reason why I wanna establish the blog is mostly that several days ago, I saw many of my classmates having owned their blog. And due to the feeling of admiration, I built my first blog as the notes for my study and the experiences I had or will have this afternoon . It is also a reason that I wanna improve my English level, so that I would write blogs in English in the most cases.</description>
-    </item>
-    
-    <item>
-      <title>Links</title>
-      <link>https://aub123.github.io/vocanic/links/</link>
-      <pubDate>Sun, 04 Jul 2021 00:16:16 +0800</pubDate>
-      
-      <guid>https://aub123.github.io/vocanic/links/</guid>
+      <guid>https://aub123.github.io/vocanic/categories/feelings/</guid>
       <description></description>
     </item>
     
