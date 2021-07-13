@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vocanic myBlogger</title>
-    <link>https://aub123.github.io/vocanic/</link>
-    <description>Recent content on vocanic myBlogger</description>
+    <title>Posts on vocanic myBlogger</title>
+    <link>https://aub123.github.io/vocanic/post/</link>
+    <description>Recent content in Posts on vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何用Turtle库画出一坨粑粑</title>
       <link>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
@@ -95,15 +95,6 @@ git commit -m &amp;quot;我是注释&amp;quot; 提交到云端并注释</descrip
       
       <guid>https://aub123.github.io/vocanic/post/reflectionreason/</guid>
       <description>The reason why I wanna establish the blog is mostly that several days ago, I saw many of my classmates having owned their blog. And due to the feeling of admiration, I built my first blog as the notes for my study and the experiences I had or will have this afternoon . It is also a reason that I wanna improve my English level, so that I would write blogs in English in the most cases.</description>
-    </item>
-    
-    <item>
-      <title>Links</title>
-      <link>https://aub123.github.io/vocanic/links/</link>
-      <pubDate>Sun, 04 Jul 2021 00:16:16 +0800</pubDate>
-      
-      <guid>https://aub123.github.io/vocanic/links/</guid>
-      <description></description>
     </item>
     
   </channel>
