@@ -16,7 +16,7 @@
       <guid>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
       <description>#这篇文章教你如何用Turtle库画出一坨粑粑
 首先，你需要的工具有：Pycharm(集成环境&amp;amp;编译器),Phython 3.x 废话不多说代码贴图：
-import turtle #导入Turtle库turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色turtle.begin_fill() #开始填充turtle.pensize(2) #海龟的腰围turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色turtle.penup() #海龟飞起，不留痕迹turtle.fd(-50) #海龟向左移动50单位turtle.pendown() #海龟落下，开始痕迹turtle.fd(100) #向右100单位turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三turtle.fd(50)turtle.fd(-30)turtle.circle(-15,-180)turtle.fd(-15)turtle.circle(10,140)turtle.fd(20)turtle.circle(1,160)turtle.fd(16)turtle.circle(-1,120)turtle.fd(25)turtle.circle(10,180)turtle.fd(10)turtle.fd(-20)turtle.circle(-15,-180)turtle.fd(-30)turtle.fd(47)turtle.circle(16,152)turtle.pendown()turtle.end_fill() #最后进行包裹区域的填充turtle.done() #海龟全程结束画图</description>
+import turtle #导入Turtle库turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色turtle.begin_fill() #开始填充turtle.pensize(2) #海龟的腰围turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色turtle.penup() #海龟飞起，不留痕迹turtle.fd(-50) #海龟向左移动50单位turtle.pendown() #海龟落下，开始痕迹turtle.fd(100) #向右100单位turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三turtle.fd(50)turtle.fd(-30)turtle.circle(-15,-180)turtle.fd(-15)turtle.circle(10,140)turtle.fd(20)turtle.circle(1,160)turtle.fd(16)turtle.circle(-1,120)turtle.fd(25)turtle.circle(10,180)turtle.fd(10)turtle.fd(-20)turtle.circle(-15,-180)turtle.fd(-30)turtle.fd(47)turtle.circle(16,152)turtle.pendown()turtle.end_fill() #最后进行包裹区域的填充turtle.done() #海龟全程结束</description>
     </item>
     
     <item>
