@@ -7,7 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>实现用wordcloud&#43;jieba&#43;python制作中文词汇云图</title>
+      <link>https://aub123.github.io/vocanic/post/jieba&#43;wordcloud&#43;python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aub123.github.io/vocanic/post/jieba&#43;wordcloud&#43;python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
+      <description>首先是安装教程：
+ https://pypi.org/
+点击这个链接分别下载自己对应版本的wordcloud和jieba的包
+wordcloud:
+ 下载成功以后应该是一个 .whl 文件，需要命令行进行操作安装：
+为了操作简便，可以把.whl 文件拖到d盘根目录下
+在路径直接输入cmd，进入命令窗口，输入pip install 文件名字（这里输入你刚才的.whl文件全名） 
+   另外不少人会有pip更新版本有误的现象：NO MODULE NAME
+解决方法：
+在命令行首先执行
+python -m ensurepip
+然后执行
+python -m pip install --upgrade pip
+    jieba:
+ 把你下载好的压缩包打开把jieba 这一文件夹放置在python安装目录下的site-packages文件夹下就可以了：
+&amp;lt;img src = &amp;ldquo;../../images/云图_site-packages.png&amp;rdquo; width = &amp;ldquo;100%&amp;gt;
+  然后是代码环节了,依然是废话不多说,直接上代码：
+import imageioimport jiebaimport matplotlib.pyplot as pltimport numpy as npfrom PIL import Imagefrom wordcloud import WordCloudfile_path = &#39;日报.</description>
+    </item>
+    
     <item>
       <title>如何用Turtle库画出一坨粑粑</title>
       <link>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
