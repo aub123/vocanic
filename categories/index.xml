@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jQuery</title>
+      <link>https://aub123.github.io/vocanic/categories/jquery/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aub123.github.io/vocanic/categories/jquery/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python</title>
       <link>https://aub123.github.io/vocanic/categories/python/</link>

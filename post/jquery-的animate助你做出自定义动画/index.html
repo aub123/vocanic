@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://aub123.github.io/vocanic//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aub123.github.io/vocanic//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aub123.github.io/vocanic//favicon-16x16.png">
+<link rel="manifest" href="https://aub123.github.io/vocanic//site.webmanifest">
+<link rel="mask-icon" href="https://aub123.github.io/vocanic//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="jquery 的animate()助你做出自定义动画" />
+
+<meta name="keywords" content="WEB前端,
+">
+
+<meta property="og:title" content="使用jQuery的animate()制作自定义动画" />
+<meta property="og:description" content="jquery 的animate()助你做出自定义动画" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aub123.github.io/vocanic/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-15T00:00:00+00:00" />
+
+
+<meta property="og:site_name" content="vocanic myBlogger" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用jQuery的animate()制作自定义动画"/>
+<meta name="twitter:description" content="jquery 的animate()助你做出自定义动画"/>
+
+
+<meta itemprop="name" content="使用jQuery的animate()制作自定义动画">
+<meta itemprop="description" content="jquery 的animate()助你做出自定义动画"><meta itemprop="datePublished" content="2021-07-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-07-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="49">
+<meta itemprop="keywords" content="WEB前端," />
+
+
+    <title>使用jQuery的animate()制作自定义动画 || vocanic myBlogger</title>
+    <link rel="canonical" href="https://aub123.github.io/vocanic/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/" />
+
+    
+
+    <link rel="stylesheet" href="/vocanic/css/reboot.css" />
+<link rel="stylesheet" href="/vocanic/css/style.css" />
+<link rel="stylesheet" href="/vocanic/css/syntax.css" />
+<script type="text/javascript" src="/vocanic/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/vocanic/" >vocanic myBlogger</a>
+      <span class="divider">/ </span>
+          <a href="/vocanic/post/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/vocanic/post/introduction/">
+              <span class="post-title">Introduction</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/vocanic/">
+              <span class="post-title">vocanic</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  <article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">使用jQuery的animate()制作自定义动画</h1>
+  <meta itemprop="headline" content="使用jQuery的animate()制作自定义动画" />
+  
+  <div class="post-tags">
+  
+    <a href="https://aub123.github.io/vocanic/tags/web%E5%89%8D%E7%AB%AF/">#WEB前端</a>&nbsp;
+  
+  </div>
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">July 15, 2021</span></div>
+      <meta itemprop="dateModified" content="July 15, 2021"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <p>#用animate()函数做动画效果#
+<em>值得提起注意的是，这篇博客其实是为了充字数，给那些前端新手写的，所以大佬们请先移步去看别的article</em></p>
+<blockquote>
+<p>前言引入<br>
+animate()函数在我看来，实质上是对JS进行CSS修改操作的简化，animate()支持所有css属性的修改。机制是：<br>
+由当前的CSS属性变化到你animate()内规定的属性。</p>
+</blockquote>
+<blockquote>
+<p>然后接下来就是关于使用的介绍了：</p>
+<blockquote>
+<p><code>$(selector).animate({params},speed,callback)</code><br>
+params 参数定义形成动画的 CSS 属性,即你想实现的<strong>修改后的CSS属性</strong><br>
+speed(可填可不填) 参数规定效果的<strong>时长</strong>。它可以取以下值：&ldquo;slow&rdquo;、&ldquo;fast&rdquo; 或毫秒。<br>
+callback(可填可不填) 参数是动画完成后所执行的函数名称。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>举个实例:</p>
+</blockquote>
+<div>
+<h3>效果演示</h3>
+<br>
+<script src="jquery.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button#bDemo").click(function(){
+    $("div#divDemo").animate({left:"170px",opacity:"0.5"},"slow");
+    $("div#divDemo").animate({fontSize:"5em"},"slow");
+  });
+});
+</script>
+<button id="bDemo">开始动画</button><br><br>
+<div id="divDemo" style="background:#98bf21;height:100px;width:210px;
+position:relative;">vocanic</div>
+</div>
+<pre><code>&lt;div&gt;
+&lt;h3&gt;效果演示&lt;/h3&gt;
+&lt;br&gt;
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt; 
+$(document).ready(function(){
+  $(&quot;button#bDemo&quot;).click(function(){
+    $(&quot;div#divDemo&quot;).animate({left:&quot;170px&quot;,opacity:&quot;0.5&quot;},&quot;slow&quot;);
+    $(&quot;div#divDemo&quot;).animate({fontSize:&quot;5em&quot;},&quot;slow&quot;);
+  });
+});
+&lt;/script&gt;
+&lt;button id=&quot;bDemo&quot;&gt;开始动画&lt;/button&gt;&lt;br&gt;&lt;br&gt;
+&lt;div id=&quot;divDemo&quot; style=&quot;background:#98bf21;height:100px;width:210px;
+position:relative;&quot;&gt;vocanic&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><blockquote>
+<blockquote>
+<p>值得注意的是:animate()函数<strong>可以先后顺序使用</strong>，从而造成更加神奇的视觉效果。<br>
+这种先后顺序又被称作为<strong>队列</strong><br>
+<strong>还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的</strong></p>
+</blockquote>
+</blockquote>
+
+  </div>
+</article>
+
+  
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://aub123.github.io/vocanic/post/jieba&#43;wordcloud&#43;python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 实现用wordcloud&#43;jieba&#43;python制作中文词汇云图</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+  
+
+  </body>
+</html>
