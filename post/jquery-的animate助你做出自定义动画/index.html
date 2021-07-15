@@ -45,7 +45,7 @@
 <meta itemprop="name" content="使用jQuery的animate()制作自定义动画">
 <meta itemprop="description" content="jquery 的animate()助你做出自定义动画"><meta itemprop="datePublished" content="2021-07-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-07-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="40">
+<meta itemprop="wordCount" content="49">
 <meta itemprop="keywords" content="WEB前端," />
 
 
@@ -163,27 +163,30 @@ $(document).ready(function(){
 <button id="bDemo">开始动画</button><br><br>
 <div id="divDemo" style="background:#98bf21;height:100px;width:210px;
 position:relative;">vocanic</div>
-``````
-<div>
-<h3>效果演示</h3>
-<br>
-<script src="jquery.js"></script>
-<script> 
+<pre><code>&lt;div&gt;
+&lt;h3&gt;效果演示&lt;/h3&gt;
+&lt;br&gt;
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt; 
 $(document).ready(function(){
-  $("button#bDemo").click(function(){
-    $("div#divDemo").animate({left:"170px",opacity:"0.5"},"slow");
-    $("div#divDemo").animate({fontSize:"5em"},"slow");
+  $(&quot;button#bDemo&quot;).click(function(){
+    $(&quot;div#divDemo&quot;).animate({left:&quot;170px&quot;,opacity:&quot;0.5&quot;},&quot;slow&quot;);
+    $(&quot;div#divDemo&quot;).animate({fontSize:&quot;5em&quot;},&quot;slow&quot;);
   });
 });
-</script>
-<button id="bDemo">开始动画</button><br><br>
-<div id="divDemo" style="background:#98bf21;height:100px;width:210px;
-position:relative;">vocanic</div>
-</div>
-``````
->>值得注意的是:animate()函数**可以先后顺序使用**，从而造成更加神奇的视觉效果。  
-> 这种先后顺序又被称作为**队列**  
-> **还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的**
+&lt;/script&gt;
+&lt;button id=&quot;bDemo&quot;&gt;开始动画&lt;/button&gt;&lt;br&gt;&lt;br&gt;
+&lt;div id=&quot;divDemo&quot; style=&quot;background:#98bf21;height:100px;width:210px;
+position:relative;&quot;&gt;vocanic&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><blockquote>
+<blockquote>
+<p>值得注意的是:animate()函数<strong>可以先后顺序使用</strong>，从而造成更加神奇的视觉效果。<br>
+这种先后顺序又被称作为<strong>队列</strong><br>
+<strong>还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的</strong></p>
+</blockquote>
+</blockquote>
+
   </div>
 </article>
 

@@ -25,8 +25,10 @@ speed(可填可不填) 参数规定效果的时长。它可以取以下值：&am
 callback(可填可不填) 参数是动画完成后所执行的函数名称。
    举个实例:
  效果演示 $(document).ready(function(){$(&#34;button#bDemo&#34;).click(function(){$(&#34;div#divDemo&#34;).animate({left:&#34;170px&#34;,opacity:&#34;0.5&#34;},&#34;slow&#34;);$(&#34;div#divDemo&#34;).animate({fontSize:&#34;5em&#34;},&#34;slow&#34;);});});开始动画
-vocanic``````效果演示 $(document).ready(function(){$(&#34;button#bDemo&#34;).click(function(){$(&#34;div#divDemo&#34;).animate({left:&#34;170px&#34;,opacity:&#34;0.5&#34;},&#34;slow&#34;);$(&#34;div#divDemo&#34;).animate({fontSize:&#34;5em&#34;},&#34;slow&#34;);});});开始动画
-vocanic``````值得注意的是:animate()函数**可以先后顺序使用**，从而造成更加神奇的视觉效果。  这种先后顺序又被称作为**队列**  **还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的**</description>
+vocanic&amp;lt;div&amp;gt;&amp;lt;h3&amp;gt;效果演示&amp;lt;/h3&amp;gt;&amp;lt;br&amp;gt;&amp;lt;script src=&amp;quot;jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt; $(document).ready(function(){$(&amp;quot;button#bDemo&amp;quot;).click(function(){$(&amp;quot;div#divDemo&amp;quot;).animate({left:&amp;quot;170px&amp;quot;,opacity:&amp;quot;0.5&amp;quot;},&amp;quot;slow&amp;quot;);$(&amp;quot;div#divDemo&amp;quot;).animate({fontSize:&amp;quot;5em&amp;quot;},&amp;quot;slow&amp;quot;);});});&amp;lt;/script&amp;gt;&amp;lt;button id=&amp;quot;bDemo&amp;quot;&amp;gt;开始动画&amp;lt;/button&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div id=&amp;quot;divDemo&amp;quot; style=&amp;quot;background:#98bf21;height:100px;width:210px;position:relative;&amp;quot;&amp;gt;vocanic&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  值得注意的是:animate()函数可以先后顺序使用，从而造成更加神奇的视觉效果。
+这种先后顺序又被称作为队列
+还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的
+  </description>
     </item>
     
   </channel>
