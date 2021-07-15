@@ -14,26 +14,7 @@
       <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>#Git 的常见情况
- 一、已有一个仓库，想把本地项目push到仓库内该这样做：
- 1.在本地仓库目录的cmd内输入以下命令：
- git init 进行初始化本地仓库
-git add . 将已有的项目文件全部添加到缓存区
-git commit -m &amp;quot;我是注释&amp;quot;提交已有的项目至仓库内，并在引号内添加注释
-   2.在云端确认自己的仓库，并复制下SSH或者HTTP方式下的网址,以我的博客为例
- git remote add origin https://github.com/aub123/vocanic.git
-PS:两种方式的区别是SSH密钥将密钥放在GITHUB之后可以不用再次验证，而HTTP方式需要每次提交时进行网页手动验证，或者输入密码验证
-   3.进行本地至云端的提交
- git push origin master将代码提交到master分支上
-此时登录你的github网页应该已经显示你的提交记录了。
-    二、从网站克隆（下载）一个仓库，并进行修改
- 1.在一个你想存放代码的目录，打开 cmd 输入以下命令对代码进行克隆（下载）(仍然以我博客为例)
- git clone https://github.com/aub123/vocanic.git 对现有仓库下载
-git pull https://github.com/aub123/vocanic.git 更新最新代码状态
-   2.对代码进行修改后，应该这样提交：
- git status 查看你修改的代码文件状态
-git add . 将修改的代码添加到缓存区
-git commit -m &amp;quot;我是注释&amp;quot; 提交到云端并注释</description>
+      <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
   </channel>
