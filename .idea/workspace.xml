@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb5dd990-1332-4a10-b27d-788a1dd65651" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/jieba+wordcloud+python实现中文词云绘制/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/post/jieba+wordcloud+python实现中文词云绘制/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="cb5dd990-1332-4a10-b27d-788a1dd65651" name="默认的" comment="默认的" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +17,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -55,6 +53,7 @@
       <workItem from="1626179244192" duration="56000" />
       <workItem from="1626179982923" duration="36000" />
       <workItem from="1626246833508" duration="2918000" />
+      <workItem from="1626316230583" duration="7000" />
     </task>
     <servers />
   </component>
