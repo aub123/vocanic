@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on vocanic myBlogger</title>
-    <link>https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/categories/python/</link>
+    <link>https://aub123.github.io/vocanic/categories/python/</link>
     <description>Recent content in python on vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>实现用wordcloud&#43;jieba&#43;python制作中文词汇云图</title>
-      <link>https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
+      <link>https://aub123.github.io/vocanic/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
+      <guid>https://aub123.github.io/vocanic/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>如何用Turtle库画出一坨粑粑</title>
-      <link>https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
+      <link>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-cloudbase-0ge234qce5c9dd98-1306440550.tcloudbaseapp.com/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
+      <guid>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
