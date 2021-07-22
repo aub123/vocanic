@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vocanic myBlogger</title>
-    <link>https://aub123.github.io/vocanic/</link>
+    <link>https://zc6666.top/</link>
     <description>Recent content on vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用jQuery的animate()制作自定义动画</title>
-      <link>https://aub123.github.io/vocanic/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</link>
+      <link>https://zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>实现用wordcloud&#43;jieba&#43;python制作中文词汇云图</title>
-      <link>https://aub123.github.io/vocanic/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
+      <link>https://zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
+      <guid>https://zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>如何用Turtle库画出一坨粑粑</title>
-      <link>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
+      <link>https://zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
+      <guid>https://zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>Git 的命令行常见使用总结</title>
-      <link>https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <link>https://zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>正则表达式的总结</title>
-      <link>https://aub123.github.io/vocanic/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+      <link>https://zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>My Personal Introduction</title>
-      <link>https://aub123.github.io/vocanic/post/introduction/</link>
+      <link>https://zc6666.top/post/introduction/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/introduction/</guid>
+      <guid>https://zc6666.top/post/introduction/</guid>
       <description>火山 vocanic   studys in the Computer School of HDU,
   is one of the REDHOME members and also the Deputy director of the Office in HDU sports club.
   loves singing and watching movies, is optimistic, outgoing and always ready to make new friends.
@@ -69,19 +69,19 @@
     
     <item>
       <title>为什么想到要建一个博客</title>
-      <link>https://aub123.github.io/vocanic/post/reflectionreason/</link>
+      <link>https://zc6666.top/post/reflectionreason/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/reflectionreason/</guid>
+      <guid>https://zc6666.top/post/reflectionreason/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>https://aub123.github.io/vocanic/links/</link>
+      <link>https://zc6666.top/links/</link>
       <pubDate>Sun, 04 Jul 2021 00:16:16 +0800</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/links/</guid>
+      <guid>https://zc6666.top/links/</guid>
       <description></description>
     </item>
     

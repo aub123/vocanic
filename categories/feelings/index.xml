@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>feelings on vocanic myBlogger</title>
-    <link>https://aub123.github.io/vocanic/categories/feelings/</link>
+    <link>https://zc6666.top/categories/feelings/</link>
     <description>Recent content in feelings on vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aub123.github.io/vocanic/categories/feelings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/categories/feelings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么想到要建一个博客</title>
-      <link>https://aub123.github.io/vocanic/post/reflectionreason/</link>
+      <link>https://zc6666.top/post/reflectionreason/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aub123.github.io/vocanic/post/reflectionreason/</guid>
+      <guid>https://zc6666.top/post/reflectionreason/</guid>
       <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
     </item>
     
