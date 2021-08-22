@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on vocanic myBlogger</title>
+    <link>https://zc6666.top/categories/html/</link>
+    <description>Recent content in HTML on vocanic myBlogger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2011-2020 Fabian Tamp</copyright>
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/categories/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DAY1:HTML/CSS</title>
+      <link>https://zc6666.top/post/week1_html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/week1_html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/</guid>
+      <description> Week1 学习 我们前期的初期学习目标:
+HTML/CSS/Javascript的理解与掌握
+这三种语言之间的关系是什么样子？
+HTML是结构层,用于实现网页的整体结构搭建;CSS是表示层,用于实现网页具体的表现样式; Javascript是行为层,是一种脚本语言,用于实现交互和数据传输等工作。
+准备工作：
+ 编译器的安装与配置(选一个就可以): Webstorm (Jetbrains系列的产品)、 VScode (微软家的产品)、 Atom
+学习网站: https://www.w3school.com.cn/
+ HTML的相关知识:
+ 什么是HTML?
+HTML是Hypertext Markup Language的缩写，翻译过来是”超文本标记语言“
+HTML负责三个要素中的 “结构”
+超文本的含义是超链接，即可以通过其从一个页面跳转到另一个页面
+语法很简单:由&amp;quot;标签&amp;quot;组成,记住要领是: &amp;ldquo;大多数标签都成对出现&amp;rdquo;
+ CSS的相关知识 :
+ 什么是CSS?
+它是层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用） 或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。
+CSS不仅可以 静态地修饰网页， 还可以 配合各种脚本语言动态地对网页各元素进行格式化
+CSS是负责三个要素中的 “表现”
+ 本周要求学习掌握:
+ 1.理解HTML网页的整体结构布局
+2.学习标签:&amp;lt;h1&amp;gt; &amp;lt;p&amp;gt; &amp;lt;a&amp;gt; &amp;lt;img&amp;gt; &amp;lt;br&amp;gt; &amp;lt;table&amp;gt; &amp;lt;!&amp;ndash; &amp;ndash;&amp;gt;等
+3.学习CSS的三种实现方式: 内联,内部样式,外部样式
+4.学习盒子模型,尺寸处理,常用定位方式
+ 学习网站:
+ https://www.codecademy.com/ (学习代码闯关式网站)
+https://www.w3school.com.cn/ (文档类网站)
+https://www.bilibili.com/video/BV1XJ411X7Ud?share_source=copy_web (bilibili网课尚硅谷前端教程)
+ </description>
+    </item>
+    
+  </channel>
+</rss>
