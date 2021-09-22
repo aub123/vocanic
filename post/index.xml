@@ -7,7 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9.22数据库课程设计</title>
+      <link>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
+      <description>#9.22数据库课程设计 一.课程要求
+  概念结构设计和逻辑结构设计 SQL语言编程实现数据库建立应用和维护   二. 设计要求
+  数据库课题选择 (不少于十个表)
+2. 分析需求（系统调查，体验流程） 绘制DFD DD图表及文字来说明   系统功能
+数据字典
+数据流程图
+ 需要存储什么数据，冗余的数据是否需要存储
+对数据进行分类
+    模型设计（难度适中,量化标准）功能数据分析 实现模型(的某一模块) 创建数据库脚本并提出文档 使用 POWERDESIGNER 和 DBMS   三.分数标准
+  1/4学时按旷课处理 8能抄袭 文档中标明分工部分 完成情况   四.注意点
+  着重于分析而不是实现 确定问题域(数据包含范围) 拎清楚数据的关系和必要性，删繁就简——不需要的数据不进行管理 需求分析，设计，管理逻辑分析，整个完整流程 交四个报告 和图和代码一起压缩打包   </description>
+    </item>
+    
     <item>
       <title>WEEK1:HTML/CSS</title>
       <link>https://zc6666.top/post/week1_html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/</link>
