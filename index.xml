@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>技术部一面试题简析</title>
+      <link>https://zc6666.top/post/%E4%B8%80%E9%9D%A2/</link>
+      <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E4%B8%80%E9%9D%A2/</guid>
+      <description>#技术部一面题目简析
+1.如果你需要获取很多人的很多类型的数据，你会选择什么方法？
+ 简单且麻烦：一个个去要不同类的数据 进阶：对数据分类后去统一收取 最终答案：通过系统直接调取用户数据存储
+ 2.如果有修改需求，怎么存储数据，或者怎么实现数据修改最方便？怎么最大保护信息的隐私性？
+ json存储+动态注入； 存入云端，用api实现数据的调用而非文件本身。
+ 3.姓名和介绍都是简单的文本数据，但是照片应该怎么处理？
+ 前端答案： HTML支持图片文件格式（img，jpg）处理，在云端保存后可以直接调用并使用。
+ 4.代码如何存储不同类的数据，选择什么比较合适?
+ json保存 对象(图片api做new，添加属性值)
+ 5.如何随机分配错误答案?
+ random随机库，每隔一定范围指定花名，实现随机答案分配
+ </description>
+    </item>
+    
     <item>
       <title>9.22数据库课程设计</title>
       <link>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
