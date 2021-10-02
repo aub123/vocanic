@@ -7,7 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据绪论笔记</title>
+      <link>https://zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</guid>
+      <description>数据绪论笔记 一、基本概念：
+ 1.数据： 描述事务的符号记录。可用文字、图形等多种形式表示，经数字化处理后可存入计算机。
+2.数据库(DB): 按一定的数据模型组织、描述和存储在计算机内的、有组织的、可共享的数据集合。
+3.数据库管理系统(DBMS): 位于用户和操作系统之间的一层数据管理软件。主要功能包括：
+ 数据定义功能：DBMS提供DDL,用户通过它定义数据对象。
+数据操作功能：DBMS提供DML，用户通过它实现对数据库的查询、插入、删除和修改等操作。
+数据库的运行管理：DBMS对数据库的建立、运用和维护进行统一管理、统一控制，以保证数据的安全性、完整性、并发控制及故障恢复。
+数据库的建立和维护功能：数据库初始数据的输入、转换，数据库的转储、恢复、重新组织及性能监视与分析等。
+   4.数据库系统(DBS)：计算机中引入数据库后的系统，包括
+数据库DB
+数据库管理系统DBMS
+应用系统
+数据库管理员DBA和用户
+ 二、DBMS的工作过程：
+ 1.应用层：
+ 应用层是DBMS与终端用户和应用程序的界面层，处理的对象是各种各样的数据库应用。
+   2.语言翻译处理层:
+ 语言翻译处理层是对数据库语言的各类语句进行语法分析，视图转换、授权检查、完整性检查等。
+   3.数据存储层：
+ 数据存储层处理的对象是单个元组，它将上层的集合操作转换为单记录操作。
+   4.数据存储层：
+ 数据存储层处理的对象是数据页和系统缓存区。
+   5.操作系统：
+ 操作系统是DBMS的基础。操作系统提供的存取原语和基本的存取方法通常是作为DBMS存储层的接口。
+  </description>
+    </item>
+    
     <item>
       <title>9.22数据库课程设计</title>
       <link>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
