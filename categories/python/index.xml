@@ -14,7 +14,23 @@
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
-      <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
+      <description>首先是安装教程：
+ https://pypi.org/
+点击这个链接分别下载自己对应版本的wordcloud和jieba的包
+wordcloud:
+ 下载成功以后应该是一个 .whl 文件，需要命令行进行操作安装：
+为了操作简便，可以把.whl 文件拖到d盘根目录下
+在路径直接输入cmd，进入命令窗口，输入pip install 文件名字（这里输入你刚才的.whl文件全名） 
+   另外不少人会有pip更新版本有误的现象：NO MODULE NAME
+解决方法：
+在命令行首先执行
+python -m ensurepip
+然后执行
+python -m pip install --upgrade pip
+    jieba:
+ 把你下载好的压缩包打开把jieba 这一文件夹放置在python安装目录下的site-packages文件夹下就可以了：
+  然后是代码环节了,依然是废话不多说,直接上代码：
+import imageioimport jiebaimport matplotlib.pyplot as pltimport numpy as npfrom PIL import Imagefrom wordcloud import WordCloudfile_path = &#39;日报.txt&#39;background_image = np.array(Image.open(&#39;img_2.png&#39;))with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f: # 读取文件essay = f.</description>
     </item>
     
     <item>
@@ -23,7 +39,8 @@
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
-      <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
+      <description>这篇文章教你如何用Turtle库画出一坨粑粑 首先，你需要的工具有：Pycharm(集成环境&amp;amp;编译器),Phython 3.x 废话不多说代码贴图：
+import turtle #导入Turtle库turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色turtle.begin_fill() #开始填充turtle.pensize(2) #海龟的腰围turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色turtle.penup() #海龟飞起，不留痕迹turtle.fd(-50) #海龟向左移动50单位turtle.pendown() #海龟落下，开始痕迹turtle.fd(100) #向右100单位turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三turtle.fd(50)turtle.fd(-30)turtle.circle(-15,-180)turtle.fd(-15)turtle.circle(10,140)turtle.fd(20)turtle.circle(1,160)turtle.fd(16)turtle.circle(-1,120)turtle.fd(25)turtle.circle(10,180)turtle.fd(10)turtle.fd(-20)turtle.circle(-15,-180)turtle.fd(-30)turtle.fd(47)turtle.circle(16,152)turtle.pendown()turtle.end_fill() #最后进行包裹区域的填充turtle.done() #海龟全程结束</description>
     </item>
     
   </channel>

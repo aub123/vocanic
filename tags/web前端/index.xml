@@ -14,7 +14,21 @@
       <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</guid>
-      <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
+      <description>用animate()函数做动画效果 值得提起注意的是，这篇博客其实是为了充字数，给那些前端新手写的，所以大佬们请先移步去看别的article
+ 前言引入
+animate()函数在我看来，实质上是对JS进行CSS修改操作的简化，animate()支持所有css属性的修改。机制是：
+由当前的CSS属性变化到你animate()内规定的属性。
+  然后接下来就是关于使用的介绍了：
+ $(selector).animate({params},speed,callback)
+params 参数定义形成动画的 CSS 属性,即你想实现的修改后的CSS属性
+speed(可填可不填) 参数规定效果的时长。它可以取以下值：&amp;ldquo;slow&amp;rdquo;、&amp;ldquo;fast&amp;rdquo; 或毫秒。
+callback(可填可不填) 参数是动画完成后所执行的函数名称。
+   举个实例:
+ 效果演示 $(document).ready(function(){$(&#34;button#bDemo&#34;).click(function(){$(&#34;div#divDemo&#34;).animate({left:&#34;170px&#34;,opacity:&#34;0.5&#34;},&#34;slow&#34;);$(&#34;div#divDemo&#34;).animate({fontSize:&#34;5em&#34;},&#34;slow&#34;);});});开始动画
+vocanic&amp;lt;div&amp;gt;&amp;lt;h3&amp;gt;效果演示&amp;lt;/h3&amp;gt;&amp;lt;br&amp;gt;&amp;lt;script src=&amp;quot;jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt; $(document).ready(function(){$(&amp;quot;button#bDemo&amp;quot;).click(function(){$(&amp;quot;div#divDemo&amp;quot;).animate({left:&amp;quot;170px&amp;quot;,opacity:&amp;quot;0.5&amp;quot;},&amp;quot;slow&amp;quot;);$(&amp;quot;div#divDemo&amp;quot;).animate({fontSize:&amp;quot;5em&amp;quot;},&amp;quot;slow&amp;quot;);});});&amp;lt;/script&amp;gt;&amp;lt;button id=&amp;quot;bDemo&amp;quot;&amp;gt;开始动画&amp;lt;/button&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div id=&amp;quot;divDemo&amp;quot; style=&amp;quot;background:#98bf21;height:100px;width:210px;position:relative;&amp;quot;&amp;gt;vocanic&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  值得注意的是:animate()函数可以先后顺序使用，从而造成更加神奇的视觉效果。
+这种先后顺序又被称作为队列
+还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的
+  </description>
     </item>
     
     <item>
@@ -23,7 +37,25 @@
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
-      <description>function clickEffect() {let balls = [];let longPressed = false;let longPress;let multiplier = 0;let width, height;let origin;let normal;let ctx;const colours = [&#34;#F73859&#34;, &#34;#14FFEC&#34;, &#34;#00E0FF&#34;, &#34;#FF99FE&#34;, &#34;#FAF15D&#34;];const canvas = document.createElement(&#34;canvas&#34;);document.body.appendChild(canvas);canvas.setAttribute(&#34;style&#34;, &#34;width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;&#34;);const pointer = document.createElement(&#34;span&#34;);pointer.classList.add(&#34;pointer&#34;);document.body.appendChild(pointer);if (canvas.getContext &amp;&amp; window.addEventListener) {ctx = canvas.getContext(&#34;2d&#34;);updateSize();window.addEventListener(&#39;resize&#39;, updateSize, false);loop();window.</description>
+      <description>基础语法
+ /正则表达式主体/修饰符(可选)
+ 常见的正则情况
+ (?![0-9]+$) 这句意思是设定后面不能为纯数字
+(?![a-z]+$) 这句意思是设定后面不能为纯小写字母
+(?![0-9a-z]+$) 不能为小写字母与数字
+(?![0-9A-Z]+$) 不能为大写字母与数字
+(?![0-9a-zA-Z]+$) 不能为大写，小写字母与数字
+ 实例
+ 必须包含数字、英文字母、特殊符号且大于等于8位
+特殊符号包括: ~!@#$%^&amp;amp;*
+*正则表达式如下:*
+&amp;lt;/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[~!@#$%^&amp;amp;*])[\da-zA-Z~!@#$%^&amp;amp;*]{8,}$/&amp;gt; 
+(?=.**[a-z]+$) 在字符某一位置存在a-z的字符
+{8.16}$ 规定密码长度在8-16位
+ 之前改上网认证正则写过一个实例
+ function pswTest() { //对密码强度进行验证，大小写字母，特殊字符，数字，四选三，在8位数以上var psw = document.getElementsByName(&amp;quot;password&amp;quot;)[0].value; var testPassword = /^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{8,}$/; if (testPassword.test(psw) === false){ alert(&amp;quot;修改密码后再尝试登录&amp;quot;); return false; }else return true; //函数返回的是一个布尔值，需要在JS主体对返回值进行判断 //然后进行相关操作}    正则看起来很乱，但其实还是有规律可循的。
+最重要的还是在写代码之前把自己的逻辑理清楚，核心思想就是排列组合的穷举方法，把该判断的情况都列出来。
+最后加上一些主体函数的操作就能实现正则的验证。</description>
     </item>
     
   </channel>
