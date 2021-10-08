@@ -28,11 +28,10 @@ PS:两种方式的区别是SSH密钥将密钥放在GITHUB之后可以不用再�
     二、从网站克隆（下载）一个仓库，并进行修改
  1.在一个你想存放代码的目录，打开 cmd 输入以下命令对代码进行克隆（下载）(仍然以我博客为例)
  git clone https://github.com/aub123/vocanic.git 对现有仓库下载
-git pull https://github.com/aub123/vocanic.git 更新最新代码状态
-   2.对代码进行修改后，应该这样提交：
- git status 查看你修改的代码文件状态
-git add . 将修改的代码添加到缓存区
-git commit -m &amp;quot;我是注释&amp;quot; 提交到云端并注释</description>
+git pull https://github.com/aub123/vocanic.git 更新最新代码状态（直接从远程主机拉取代码并进行merge合并操纵）
+git fetch https://github.com/aub123/vocanic.git 抓取远程主机代码但是不进行合并，用于需要检验代码情况后进行更新代码的情况
+     2.对代码进行修改后，应该这样提交：
+ git status 查看你修改的代码文件状态</description>
     </item>
     
   </channel>

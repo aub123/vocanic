@@ -45,7 +45,7 @@
 <meta itemprop="name" content="Git 的命令行常见使用总结">
 <meta itemprop="description" content="很多新手小白对GIT一脸懵，我来总结一下常见的命令行"><meta itemprop="datePublished" content="2021-07-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-07-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="77">
+<meta itemprop="wordCount" content="81">
 <meta itemprop="keywords" content="Git," />
 
 
@@ -297,9 +297,12 @@
 <p>1.在一个你想存放代码的目录，打开 cmd 输入以下命令对代码进行克隆（下载）(仍然以我博客为例)</p>
 <blockquote>
 <p><code>git clone https://github.com/aub123/vocanic.git</code> 对现有仓库下载<br>
-<code>git pull https://github.com/aub123/vocanic.git</code> 更新最新代码状态</p>
+<code>git pull https://github.com/aub123/vocanic.git</code> 更新最新代码状态（直接从远程主机拉取代码并进行merge合并操纵）<br>
+<code>git fetch https://github.com/aub123/vocanic.git</code>  抓取远程主机代码但是不进行合并，用于需要检验代码情况后进行更新代码的情况</p>
 </blockquote>
 </blockquote>
+</blockquote>
+<blockquote>
 <blockquote>
 <p>2.对代码进行修改后，应该这样提交：</p>
 <blockquote>
