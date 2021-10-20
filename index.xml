@@ -7,7 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS中的函数声明整体和变量声明提升</title>
+      <link>https://zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</guid>
+      <description>#JS中的变量声明提升和函数声明整体提升#
+JS算是学习前端的小萌新们必须要走的一项难关，其中变量和函数提升是JS中很别具一格的特点。由于JS 的预编译特性，所以函数和变量的编译顺序发生了一丢丢和视图不一样的改变。下面让我们一起来学习一下：
+首先记住一个宗旨：函数声明会整体提升；变量则是声明提升
+一、先看变量的提升：
+ 1.当我们写一段如下的代码时：
+ 	var a = 3; document.write(&#39;a&#39;);   根据我们之前所学的知识，我们很容易知道会输出一个：
+  	3  2.当代码删去对a的声明时，变成如下时候：
+ 	document.write(a);  我们会得到一个ERROR的结果
+   上面两种情况都是很基础的内容：
+ 第一种因为上面对a有了定义声明并赋值，所以下面可以打印出来；
+第二种因为之前没有对a的定义声明，所以出现了未定义的变量从而出现错误。
+   3.下面让我们看第三种情况：
+ 	document.write(&#39;a&#39;);	var a = 3;  我们此时惊奇地发现:
+   打印的操作并未出现错误，但是a的值也并未传到页面中。这又是为什么呢？
+其实，是变量的声明发生了提升，你可以理解为，将a的定义提前了：
+ 	var a;document.write(&#39;a&#39;);a = 3; 进行了如上的操作。以上就是变量提升的说明啦！
+ 二、函数声明整体提升：
+&amp;lt;img src=&amp;quot;../../images/JS预编译_函数提升.png width=100%&amp;gt;</description>
+    </item>
+    
     <item>
       <title>数据绪论笔记</title>
       <link>https://zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</link>
@@ -174,9 +200,12 @@ PS:两种方式的区别是SSH密钥将密钥放在GITHUB之后可以不用再�
 此时登录你的github网页应该已经显示你的提交记录了。
     二、从网站克隆（下载）一个仓库，并进行修改
  1.在一个你想存放代码的目录，打开 cmd 输入以下命令对代码进行克隆（下载）(仍然以我博客为例)
- git clone https://github.com/aub123/vocanic.git 对现有仓库下载
-git pull https://github.com/aub123/vocanic.git 更新最新代码状态（直接从远程主机拉取代码并进行merge合并操纵）
-git fetch https://github.com/aub123/vocanic.git 抓取远程主机代码但是不进行合并，用于需要检验代码情况后进行更新代码的情况
+ git clone https://github.com/aub123/vocanic.git
+对现有仓库下载
+git pull https://github.com/aub123/vocanic.git
+更新最新代码状态（直接从远程主机拉取代码并进行merge合并操纵）
+git fetch https://github.com/aub123/vocanic.git
+抓取远程主机代码但是不进行合并，用于需要检验代码情况后进行更新代码的情况
      2.对代码进行修改后，应该这样提交：
  git status 查看你修改的代码文件状态</description>
     </item>
