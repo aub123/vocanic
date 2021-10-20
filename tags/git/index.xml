@@ -20,9 +20,9 @@
 git add . 将已有的项目文件全部添加到缓存区
 git commit -m &amp;quot;我是注释&amp;quot;提交已有的项目至仓库内，并在引号内添加注释
    2.在云端确认自己的仓库，并复制下SSH或者HTTP方式下的网址,以我的博客为例
- git remote add origin https://github.com/aub123/vocanic.git
+git remote add origin https://github.com/aub123/vocanic.git
 PS:两种方式的区别是SSH密钥将密钥放在GITHUB之后可以不用再次验证，而HTTP方式需要每次提交时进行网页手动验证，或者输入密码验证（注：于2021年某月份后HTTP方式登录不再支持）
-   3.进行本地至云端的提交
+  3.进行本地至云端的提交
  git push origin master将代码提交到master分支上
 此时登录你的github网页应该已经显示你的提交记录了。
     二、从网站克隆（下载）一个仓库，并进行修改
@@ -34,7 +34,8 @@ git pull https://github.com/aub123/vocanic.git
 git fetch https://github.com/aub123/vocanic.git
 抓取远程主机代码但是不进行合并，用于需要检验代码情况后进行更新代码的情况
      2.对代码进行修改后，应该这样提交：
- git status 查看你修改的代码文件状态</description>
+ git status 查看你修改的代码文件状态
+git add .</description>
     </item>
     
   </channel>
