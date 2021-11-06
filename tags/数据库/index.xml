@@ -9,13 +9,12 @@
     <copyright>© 2011-2020 Fabian Tamp</copyright>
     <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SQL Server的基本操作</title>
+      <title>SQL Server的基本数据定义</title>
       <link>https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</guid>
-      <description>SQL Server的基本数据定义 @[TOC]
-创建基本表——create table   语句的基本格式   create table &amp;lt;表名&amp;gt;(&amp;lt;列定义清单&amp;gt;)
+      <description>SQL Server的基本数据定义 SQL Server的基本数据定义创建基本表——create table表结构的修改——ALTERTABLE删除基本表——DROPTABLE创建索引——CREATEINDEX删除索引——DROPINDEX创建基本表——create table   语句的基本格式   create table &amp;lt;表名&amp;gt;(&amp;lt;列定义清单&amp;gt;)
  说明：   (1) 表名不能有重复（更严格的说是两个关系之间不能有同名，包括视图）
 (2) 列定义清单内定义所有属性列的结构情况，内容包括: &amp;lt;列名&amp;gt;&amp;lt;数据结构&amp;gt;[&amp;lt;默认值&amp;gt;|&amp;lt;标识列设置&amp;gt;][&amp;lt;完整性约束&amp;gt;] （方括号中为选填项）
 (3) &amp;lt;列名&amp;gt;规定该列属性名称，不能有两个同名列。
@@ -27,22 +26,13 @@
 UNIQUE该列值不能有相同者
  SQL只要求语句的语法正确就可以，对字母大小写等格式不作规定；
 一条语句可以放在多行上，字和符号间有一个或多个空格分隔；一般每个列定义单独占一行(或数行)， 每个列定义中相似的部分对齐(这不是必须的)，从而增加了可读性，让人一目了然。
-  ###表结构的修改——ALTERTABLE
-基本表的结构是会随系统需求的变化而修改的， 因此可能需要增加、修改或删除其中一列 (或完整性约束条件，增加或删除表级完整性约束等)
- 1.语句基本格式
-ALTERTABLE语句的基本格式如下：
- ALTERTABLE&amp;lt;表名&amp;gt;
+  表结构的修改——ALTERTABLE 基本表的结构是会随系统需求的变化而修改的， 因此可能需要增加、修改或删除其中一列 (或完整性约束条件，增加或删除表级完整性约束等)
+  语句基本格式
+ALTERTABLE语句的基本格式如下：   ALTERTABLE&amp;lt;表名&amp;gt;
 [ADD&amp;lt;列名&amp;gt;&amp;lt;数据类型&amp;gt;[列的完整性约束]]|[ADD&amp;lt;表级完整性约束&amp;gt;]
 [ALTERCOLUMN&amp;lt;列名&amp;gt;&amp;lt;新的数据类型&amp;gt;]
 [DROPCOLUMN&amp;lt;列名&amp;gt;]
-[DROPCONSTRAINT&amp;lt;表级完整性约束名&amp;gt;];
- 2.说明
- (1)ADD：为表增加一新列或者表级完整性约束， 具体规定与CREATETABLE的相当，但新列必须允许为空(除非有默认值)；
-2)DROPCOLUMN：在表中删除一个原有的列；
-(3)ALTERCOLUMN：修改表中原有列的数据类型， 通常，当该列上有约束定义时，不能修改数据类型；
-(4)DROPCONSTRAINT：删除原有的表级完整性约束。
-  ###删除基本表——DROPTABLE
- 1.语句基本格式</description>
+[DROPCONSTRAINT&amp;lt;表级完整性约束名&amp;gt;];</description>
     </item>
     
     <item>
