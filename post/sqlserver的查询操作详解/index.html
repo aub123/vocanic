@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://zc6666.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zc6666.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zc6666.top/favicon-16x16.png">
+<link rel="manifest" href="https://zc6666.top/site.webmanifest">
+<link rel="mask-icon" href="https://zc6666.top/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="今天来详细讲解一下SQLSERVER的查询操作" />
+
+<meta name="keywords" content="数据库,
+">
+
+<meta property="og:title" content="数据库之SQL server的查询操作" />
+<meta property="og:description" content="今天来详细讲解一下SQLSERVER的查询操作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-21T00:00:00+00:00" />
+
+
+<meta property="og:site_name" content="Vocanic myBlogger" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库之SQL server的查询操作"/>
+<meta name="twitter:description" content="今天来详细讲解一下SQLSERVER的查询操作"/>
+
+
+<meta itemprop="name" content="数据库之SQL server的查询操作">
+<meta itemprop="description" content="今天来详细讲解一下SQLSERVER的查询操作"><meta itemprop="datePublished" content="2021-11-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="420">
+<meta itemprop="keywords" content="数据库," />
+
+
+    <title>数据库之SQL server的查询操作 || Vocanic myBlogger</title>
+    <link rel="canonical" href="https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >Vocanic myBlogger</a>
+      <span class="divider">/ </span>
+          <a href="/post/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/post/introduction/">
+              <span class="post-title">Vocanic&#39;s Introduction</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+<script type="text/javascript">
+  function clickEffect() {
+    let balls = [];
+    let longPressed = false;
+    let longPress;
+    let multiplier = 0;
+    let width, height;
+    let origin;
+    let normal;
+    let ctx;
+    const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    const pointer = document.createElement("span");
+    pointer.classList.add("pointer");
+    document.body.appendChild(pointer);
+
+    if (canvas.getContext && window.addEventListener) {
+      ctx = canvas.getContext("2d");
+      updateSize();
+      window.addEventListener('resize', updateSize, false);
+      loop();
+      window.addEventListener("mousedown", function(e) {
+        pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+        document.body.classList.add("is-pressed");
+        longPress = setTimeout(function() {
+          document.body.classList.add("is-longpress");
+          longPressed = true;
+        }, 500);
+      }, false);
+      window.addEventListener("mouseup", function(e) {
+        clearInterval(longPress);
+        if (longPressed == true) {
+          document.body.classList.remove("is-longpress");
+          pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+          longPressed = false;
+        }
+        document.body.classList.remove("is-pressed");
+      }, false);
+      window.addEventListener("mousemove", function(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        pointer.style.top = y + "px";
+        pointer.style.left = x + "px";
+      }, false);
+    } else {
+      console.log("canvas or addEventListener is unsupported!");
+    }
+
+
+    function updateSize() {
+      canvas.width = window.innerWidth * 2;
+      canvas.height = window.innerHeight * 2;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+      width = (canvas.width = window.innerWidth);
+      height = (canvas.height = window.innerHeight);
+      origin = {
+        x: width / 2,
+        y: height / 2
+      };
+      normal = {
+        x: width / 2,
+        y: height / 2
+      };
+    }
+    class Ball {
+      constructor(x = origin.x, y = origin.y) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.PI * 2 * Math.random();
+        if (longPressed == true) {
+          this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+        } else {
+          this.multiplier = randBetween(6, 12);
+        }
+        this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+        this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+        this.r = randBetween(8, 12) + 3 * Math.random();
+        this.color = colours[Math.floor(Math.random() * colours.length)];
+      }
+      update() {
+        this.x += this.vx - normal.x;
+        this.y += this.vy - normal.y;
+        normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+        normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+        this.r -= 0.3;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+      }
+    }
+
+    function pushBalls(count = 1, x = origin.x, y = origin.y) {
+      for (let i = 0; i < count; i++) {
+        balls.push(new Ball(x, y));
+      }
+    }
+
+    function randBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.r < 0) continue;
+        ctx.fillStyle = b.color;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        b.update();
+      }
+      if (longPressed == true) {
+        multiplier += 0.2;
+      } else if (!longPressed && multiplier >= 0) {
+        multiplier -= 0.4;
+      }
+      removeBall();
+      requestAnimationFrame(loop);
+    }
+
+    function removeBall() {
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+          balls.splice(i, 1);
+        }
+      }
+    }
+  }
+  clickEffect();
+</script>
+
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">数据库之SQL server的查询操作</h1>
+  <meta itemprop="headline" content="数据库之SQL server的查询操作" />
+  
+  <div class="post-tags">
+  
+    <a href="https://zc6666.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>&nbsp;
+  
+  </div>
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">November 21, 2021</span></div>
+      <meta itemprop="dateModified" content="November 21, 2021"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <!-- MarkdownTOC autolink="true" -->
+<ul>
+<li><a href="#sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C">SQLSERVER的查询操作</a>
+<ul>
+<li><a href="#34%E5%8D%95%E8%A1%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2">3.4单表的数据查询</a>
+<ul>
+<li><a href="#341%E6%97%A0%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2">3.4.1无条件查询</a></li>
+<li><a href="#342%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2">3.4.2条件查询</a>
+<ul>
+<li><a href="#%E5%A4%9A%E9%87%8D%E6%9D%A1%E4%BB%B6%EF%BC%88%E5%8C%85%E5%90%ABand%E3%80%81or%E3%80%81not%EF%BC%89">多重条件（包含AND、OR、NOT）</a></li>
+<li><a href="#%E7%A1%AE%E5%AE%9A%E8%8C%83%E5%9B%B4%EF%BC%88between%E2%80%A6and%EF%BC%89">确定范围（BETWEEN…AND）</a></li>
+<li><a href="#%E7%A1%AE%E5%AE%9A%E9%9B%86%E5%90%88%EF%BC%88in%EF%BC%89">确定集合（IN）</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%EF%BC%88like%EF%BC%89">字符匹配（LIKE）</a></li>
+</ul>
+</li>
+<li><a href="#343%E5%B8%B8%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0">3.4.3常用聚合函数</a></li>
+<li><a href="#344%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2">3.4.4分组查询</a></li>
+<li><a href="#345%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E7%9A%84%E6%8E%92%E5%BA%8F">3.4.5查询结果的排序</a></li>
+</ul>
+</li>
+<li><a href="#35%E5%A4%9A%E8%A1%A8%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2">3.5多表的连接查询</a>
+<ul>
+<li><a href="#351%E5%86%85%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2">3.5.1内连接查询</a></li>
+<li><a href="#352%E5%A4%96%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2">3.5.2外连接查询</a></li>
+<li><a href="#353%E4%BA%A4%E5%8F%89%E6%9F%A5%E8%AF%A2">3.5.3交叉查询</a></li>
+</ul>
+</li>
+<li><a href="#36%E5%AD%90%E6%9F%A5%E8%AF%A2">3.6子查询</a>
+<ul>
+<li><a href="#361%E6%99%AE%E9%80%9A%E5%AD%90%E6%9F%A5%E8%AF%A2">3.6.1普通子查询</a>
+<ul>
+<li><a href="#%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E5%80%BC%E7%9A%84%E6%99%AE%E9%80%9A%E5%AD%90%E6%9F%A5%E8%AF%A2">返回一个值的普通子查询</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E4%B8%80%E7%BB%84%E5%80%BC%E7%9A%84%E6%99%AE%E9%80%9A%E5%AD%90%E6%9F%A5%E8%AF%A2">返回一组值的普通子查询</a></li>
+</ul>
+</li>
+<li><a href="#362%E7%9B%B8%E5%85%B3%E5%AD%90%E6%9F%A5%E8%AF%A2">3.6.2相关子查询</a></li>
+<li><a href="#363%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E6%9F%A5%E8%AF%A2">3.6.3其他类型查询</a>
+<ul>
+<li><a href="#%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97%E6%9F%A5%E8%AF%A2union">集合运算查询(union)</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E5%88%B0%E8%A1%A8%E4%B8%ADselect%E2%80%A6into">存储查询结果到表中(select…into)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+<h1 id="sqlserver的查询操作">SQLSERVER的查询操作</h1>
+<h2 id="34单表的数据查询">3.4单表的数据查询</h2>
+<p>创建一个基本表，如下：</p>
+<pre><code>create table Student
+(
+	s_no char(6) primary key,
+	class_no char(6) not null,
+	s_name varchar(10) not null,
+	s_sex char(2) check(s_sex = '男' or s_sex = '女'),
+	s_birthday datetime 
+)
+</code></pre><table>
+<thead>
+<tr>
+<th>s_no</th>
+<th>class_no</th>
+<th>s_name</th>
+<th>s_sex</th>
+<th>s_birthday99120</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>991201</td>
+<td>js0001</td>
+<td>徐辉</td>
+<td>女</td>
+<td>1978-08-01 00:00:00.000</td>
+</tr>
+<tr>
+<td>991101</td>
+<td>js0002</td>
+<td>王一山</td>
+<td>男</td>
+<td>1980-12-04 00:00:00.000</td>
+</tr>
+<tr>
+<td>991104</td>
+<td>js0002</td>
+<td>牛莉</td>
+<td>女</td>
+<td>1981-06-09 00:00:00.000</td>
+</tr>
+<tr>
+<td>002101</td>
+<td>xx0001</td>
+<td>李丽丽</td>
+<td>女</td>
+<td>1981-09-19 00:00:00.000</td>
+</tr>
+<tr>
+<td>991102</td>
+<td>xx0001</td>
+<td>李王</td>
+<td>男</td>
+<td>1980-09-23 00:00:00.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="341无条件查询">3.4.1无条件查询</h3>
+<p>格式为：select 列名 from 表名</p>
+<pre><code>select s_no,class_no,s_name,s_sex,s_birthday
+from Student
+或
+select *
+from Student
+</code></pre><p>用 * 表示Student表的全部列名，而不必逐一列出</p>
+<pre><code>select distinct s_no,class_no as c_s
+from Student
+</code></pre><p>distinct 会消去重复行；as可以为查询结果的列名重新命名</p>
+<h3 id="342条件查询">3.4.2条件查询</h3>
+<p>格式为：select 列名 from 表名 where 条件</p>
+<p>以下是条件查询中常用的几种比较运算符</p>
+<pre><code>比较大小（包含=、&gt;=、&lt;=、&lt;、&gt;、&lt;&gt;、!=）
+//查询出生日期在1980年以后的学生的学号
+select s_no
+from Student
+where s_birthday &gt; '1980-01-01'
+
+//查询所有男同学，要求显示其学号s_no、姓名s_name、出生日期s_birthday
+select s_no,s_name,s_birthday
+from Student
+where s_sex = '男'
+</code></pre><h4 id="多重条件包含andornot">多重条件（包含AND、OR、NOT）</h4>
+<pre><code>//查询所有出生日期在“1980－01－01”前的女同学，要求显示其学号s_no、姓名s_name、性别s_sex
+select s_no,s_name,s_sex
+from Student
+where s_birthday &lt; '1980-01-01' and s_sex = '女'
+</code></pre><h4 id="确定范围betweenand">确定范围（BETWEEN…AND）</h4>
+<pre><code>//查询出生日期在1980-1-1和1982-1-1之间的学生的姓名和出生日期
+select s_name,s_birthday
+from Student
+where s_birthday between '1980-1-1' and '1982-1-1' 
+</code></pre><h4 id="确定集合in">确定集合（IN）</h4>
+<pre><code>//查询班号为js0001和js0002的学生的姓名和班号
+select s_name,class_no
+from Student
+where class_no in('js0001','js0002')
+此语句也可用OR实现
+select s_name,class_no
+from Student
+where class_no = 'js0001' or class_no = 'js0002'
+</code></pre><h4 id="字符匹配like">字符匹配（LIKE）</h4>
+<pre><code>//查询所有姓“李”的男同学，要求显示其学号s_no、姓名s_name、性别s_sex、出生日期s_birthday
+select s_no,s_name,s_sex,s_birthday
+from Student
+where s_sex = '男' and s_name like '李%' 
+
+//查询所有姓名中含有“一”字的同学，要求显示其学号s_no、姓名s_name。
+select s_no,s_name
+from Student 
+where s_name like '%一%'
+</code></pre><p>%代表0个或多个字符；<br>
+_(下划线)代表一个字符</p>
+<pre><code>空值（IS NULL）
+//查询出生日期为空的学生姓名
+select s_name
+from Student
+where s_birthday is null
+</code></pre><p>is null不能写成= null</p>
+<h3 id="343常用聚合函数">3.4.3常用聚合函数</h3>
+<p>AVG(按列计算平均值)、SUM(按列计算值的总和)、MAX(求一列中的最大值)、MIN(求一列中的最小值)、COUNT(按列值统计个数)、COUNT(*)用来统计元组的个数，不消除重复行。</p>
+<pre><code>//查询有多少个班级
+select count(distinct class_no) as classnum
+from Student	
+</code></pre><p>distinct 表示消除重复行，as为查询的每一项内容取一个别名，否则查询结果中就不显示列名</p>
+<h3 id="344分组查询">3.4.4分组查询</h3>
+<p>GROUP BY子句可以将查询结果按属性列或属性列组合在行的方向上进行分组，每组在属性列或属性列组合上具有相同的值。</p>
+<p>HAVING子句和WHERE子句一样是条件筛选，不同的是，WHERE子句是作用于基本表或视图，选出满足条件的元组，而HAVING子句是作用于组，选择满足条件的组。其顺序是WHERE 、GROUP BY、HAVING。</p>
+<pre><code>select count(s_no) as s_num
+from Student
+group by class_no
+having(count(s_no) &gt;= 2)
+</code></pre><h3 id="345查询结果的排序">3.4.5查询结果的排序</h3>
+<p>ORDER BY子句可以为查询结果排序，DESC为降序，ASC为升序，默认时为升序。</p>
+<pre><code>select s_no
+from Student
+order by s_no asc
+</code></pre><h2 id="35多表的连接查询">3.5多表的连接查询</h2>
+<p><strong>inner join</strong>（内连接）：显示符合条件的记录。</p>
+<p><strong>left outer join</strong>（左外连接）：显示符合条件的数据行以及左边表中不符合条件的数据行，此时右边数据行以NULL显示。</p>
+<p><strong>right outer join</strong>（右外连接）：显示符合条件的数据行以及右边表中不符合条件的数据行，此时左边数据行以NULL显示。</p>
+<p><strong>full outer join</strong>（全外连接）：显示符合条件的数据行以及左边表和右边表中不符合条件的数据行，此时缺乏数据的数据行会以NULL显示。</p>
+<p><strong>cross join</strong>（交叉查询）：将一个表中的每一个记录和另一个表中的每个记录匹配成新的数据行。</p>
+<p>创建一个数据表如下：</p>
+<pre><code>create table Choice 
+(
+	s_no char(6),
+	course_no char(5),
+	score numeric(6,1)	
+)
+</code></pre><table>
+<thead>
+<tr>
+<th>s_no</th>
+<th>course_no</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>991104</td>
+<td>01001</td>
+<td>78.0</td>
+</tr>
+<tr>
+<td>991201</td>
+<td>01001</td>
+<td>67.0</td>
+</tr>
+<tr>
+<td>991101</td>
+<td>01002</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>991102</td>
+<td>01002</td>
+<td>58.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="351内连接查询">3.5.1内连接查询</h3>
+<pre><code>//查询所有同学的选课及成绩情况,要求显示学生的学号s_no,姓名s_name,课程号course_no和课程的成绩score
+//隐式内连接查询
+select Student.s_no,s_name,course_no,score
+from Student,Choice
+where Student.s_no = Choice.s_no 
+
+//显示内连接查询
+select Student.s_no,s_name,course_no,score
+from Student inner join Choice
+on Student.s_no = Choice.s_no
+</code></pre><h3 id="352外连接查询">3.5.2外连接查询</h3>
+<p>外部链接分为左外部连接和右外部连接两种。以主表所在的方向区分外部链接，主表在左边，则为左外部连接；主表在右边，则为右外部连接。</p>
+<pre><code>//查询所有同学情况，要求显示学生的学号s_no,姓名s_name,成绩score
+select Student.s_no,s_name,score
+from Student left outer join Choice
+on Student.s_no = Choice.s_no
+</code></pre><h3 id="353交叉查询">3.5.3交叉查询</h3>
+<pre><code>select *
+from Student cross join Choice
+</code></pre><h2 id="36子查询">3.6子查询</h2>
+<h3 id="361普通子查询">3.6.1普通子查询</h3>
+<p>先执行子查询，然后把子查询的结果作为父查询的查询条件的值。</p>
+<h4 id="返回一个值的普通子查询">返回一个值的普通子查询</h4>
+<p>当子查询的返回值只有一个时，可以使用比较运算符（= 、&gt;、&lt;、!=、&gt;=、&lt;=）将父查询和子查询连接起来。</p>
+<pre><code>//查询和王一山是同一班级的同学的姓名（使用子查询）
+select s_name
+from Student
+where class_no = (select class_no
+				  from Student
+				  where s_name = '王一山')
+</code></pre><h4 id="返回一组值的普通子查询">返回一组值的普通子查询</h4>
+<p>当子查询的返回值不是一个值，而是一组值的时候，不能用比较运算符，而应使用ANY或ALL或IN。</p>
+<pre><code>//查询教授课程号为01001的教师姓名
+select s_name
+from Student
+where s_no = any( select s_no
+			     from Choice
+			     where course_no = '01001')
+</code></pre><p>= ANY等价与IN；<br>
+NOT IN等价于&lt;&gt;ALL；</p>
+<p>ALL等价于&gt;MAX( )；
+&lt; ALL等价于&lt; MIN( )；</p>
+<p>ANY登记于&gt;MIN( )；</p>
+<p>&lt; ANY等价于 &lt; MAX( )。</p>
+<h3 id="362相关子查询">3.6.2相关子查询</h3>
+<p>首先选取父查询表中的第一行记录，内部的子查询利用此行中相关的属性值进行查询，然后父查询根据子查询返回的结果判断此行是否满足查询条件。如果满足条件，则把该行放入父查询的查询结果集合中.</p>
+<h3 id="363其他类型查询">3.6.3其他类型查询</h3>
+<h4 id="集合运算查询union">集合运算查询(union)</h4>
+<h4 id="存储查询结果到表中selectinto">存储查询结果到表中(select…into)</h4>
+
+  </div>
+</article>
+
+  
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: SQL Server的基本数据定义</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+  
+
+  </body>
+</html>

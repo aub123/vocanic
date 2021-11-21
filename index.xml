@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库之SQL server的查询操作</title>
+      <link>https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</guid>
+      <description>SQLSERVER的查询操作  3.4单表的数据查询  3.4.1无条件查询 3.4.2条件查询  多重条件（包含AND、OR、NOT） 确定范围（BETWEEN…AND） 确定集合（IN） 字符匹配（LIKE）   3.4.3常用聚合函数 3.4.4分组查询 3.4.5查询结果的排序   3.5多表的连接查询  3.5.1内连接查询 3.5.2外连接查询 3.5.3交叉查询   3.6子查询  3.6.1普通子查询  返回一个值的普通子查询 返回一组值的普通子查询   3.6.2相关子查询 3.6.3其他类型查询  集合运算查询(union) 存储查询结果到表中(select…into)        SQLSERVER的查询操作 3.4单表的数据查询 创建一个基本表，如下：
+create table Student(s_no char(6) primary key,class_no char(6) not null,s_name varchar(10) not null,s_sex char(2) check(s_sex = &#39;男&#39; or s_sex = &#39;女&#39;),s_birthday datetime )   s_no class_no s_name s_sex s_birthday99120     991201 js0001 徐辉 女 1978-08-01 00:00:00.</description>
+    </item>
+    
     <item>
       <title>SQL Server的基本数据定义</title>
       <link>https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</link>
