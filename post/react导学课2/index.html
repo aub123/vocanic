@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://zc6666.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zc6666.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zc6666.top/favicon-16x16.png">
+<link rel="manifest" href="https://zc6666.top/site.webmanifest">
+<link rel="mask-icon" href="https://zc6666.top/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="为干事第二次讲解React，继续讲解Hooks的使用" />
+
+<meta name="keywords" content="WEB前端,
+">
+
+<meta property="og:title" content="React导学课2" />
+<meta property="og:description" content="为干事第二次讲解React，继续讲解Hooks的使用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-09T00:00:00+00:00" />
+
+
+<meta property="og:site_name" content="Vocanic myBlogger" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React导学课2"/>
+<meta name="twitter:description" content="为干事第二次讲解React，继续讲解Hooks的使用"/>
+
+
+<meta itemprop="name" content="React导学课2">
+<meta itemprop="description" content="为干事第二次讲解React，继续讲解Hooks的使用"><meta itemprop="datePublished" content="2022-04-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="259">
+<meta itemprop="keywords" content="WEB前端," />
+
+
+    <title>React导学课2 || Vocanic myBlogger</title>
+    <link rel="canonical" href="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >Vocanic myBlogger</a>
+      <span class="divider">/ </span>
+          <a href="/post/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/post/introduction/">
+              <span class="post-title">Vocanic&#39;s Introduction</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+<script type="text/javascript">
+  function clickEffect() {
+    let balls = [];
+    let longPressed = false;
+    let longPress;
+    let multiplier = 0;
+    let width, height;
+    let origin;
+    let normal;
+    let ctx;
+    const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    const pointer = document.createElement("span");
+    pointer.classList.add("pointer");
+    document.body.appendChild(pointer);
+
+    if (canvas.getContext && window.addEventListener) {
+      ctx = canvas.getContext("2d");
+      updateSize();
+      window.addEventListener('resize', updateSize, false);
+      loop();
+      window.addEventListener("mousedown", function(e) {
+        pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+        document.body.classList.add("is-pressed");
+        longPress = setTimeout(function() {
+          document.body.classList.add("is-longpress");
+          longPressed = true;
+        }, 500);
+      }, false);
+      window.addEventListener("mouseup", function(e) {
+        clearInterval(longPress);
+        if (longPressed == true) {
+          document.body.classList.remove("is-longpress");
+          pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+          longPressed = false;
+        }
+        document.body.classList.remove("is-pressed");
+      }, false);
+      window.addEventListener("mousemove", function(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        pointer.style.top = y + "px";
+        pointer.style.left = x + "px";
+      }, false);
+    } else {
+      console.log("canvas or addEventListener is unsupported!");
+    }
+
+
+    function updateSize() {
+      canvas.width = window.innerWidth * 2;
+      canvas.height = window.innerHeight * 2;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+      width = (canvas.width = window.innerWidth);
+      height = (canvas.height = window.innerHeight);
+      origin = {
+        x: width / 2,
+        y: height / 2
+      };
+      normal = {
+        x: width / 2,
+        y: height / 2
+      };
+    }
+    class Ball {
+      constructor(x = origin.x, y = origin.y) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.PI * 2 * Math.random();
+        if (longPressed == true) {
+          this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+        } else {
+          this.multiplier = randBetween(6, 12);
+        }
+        this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+        this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+        this.r = randBetween(8, 12) + 3 * Math.random();
+        this.color = colours[Math.floor(Math.random() * colours.length)];
+      }
+      update() {
+        this.x += this.vx - normal.x;
+        this.y += this.vy - normal.y;
+        normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+        normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+        this.r -= 0.3;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+      }
+    }
+
+    function pushBalls(count = 1, x = origin.x, y = origin.y) {
+      for (let i = 0; i < count; i++) {
+        balls.push(new Ball(x, y));
+      }
+    }
+
+    function randBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.r < 0) continue;
+        ctx.fillStyle = b.color;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        b.update();
+      }
+      if (longPressed == true) {
+        multiplier += 0.2;
+      } else if (!longPressed && multiplier >= 0) {
+        multiplier -= 0.4;
+      }
+      removeBall();
+      requestAnimationFrame(loop);
+    }
+
+    function removeBall() {
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+          balls.splice(i, 1);
+        }
+      }
+    }
+  }
+  clickEffect();
+</script>
+
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">React导学课2</h1>
+  <meta itemprop="headline" content="React导学课2" />
+  
+  <div class="post-tags">
+  
+    <a href="https://zc6666.top/tags/web%E5%89%8D%E7%AB%AF/">#WEB前端</a>&nbsp;
+  
+  </div>
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">April 9, 2022</span></div>
+      <meta itemprop="dateModified" content="April 9, 2022"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <h1 id="react--导学课2">React  导学课2</h1>
+<h2 id="usecontext">useContext（）</h2>
+<p>上下文hook，接受一个上下文对象，并返回当前上下文</p>
+<p>创建上下文：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">createContext</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MyContext</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createContext</span>(<span style="color:#e6db74">&#39;default&#39;</span>);
+<span style="color:#75715e">//这里的值是最终的保底值，根据业务类型放个默认值
+</span></code></pre></div><p>当前上下文的值由树中调用组件上方的value最近的 prop确定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react">&lt;<span style="color:#f92672">MyContext.Provider</span> <span style="color:#a6e22e">value </span><span style="color:#f92672">=</span> {<span style="color:#f92672">???</span>}&gt;
+    {<span style="color:#75715e">/* 这里的value是想赋给上下文Provider标签域内的value */</span>}
+    &lt;<span style="color:#f92672">Component1</span> /&gt;
+    &lt;<span style="color:#f92672">Component2</span> /&gt;
+&lt;/<span style="color:#f92672">MyContext.Provider</span>&gt;
+</code></pre></div><p>当最近的MyContext.Provider组件更新时，此hook将触发更新并重新渲染，并将<strong>最近的上下文value</strong>传递给MyContex提供程序，重新渲染的话仍然会从组件本身开始使用useContext。</p>
+<p>useContext里同时可以传入函数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react">  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">textContext</span>, <span style="color:#a6e22e">setTextContext</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#39;123&#39;</span>)
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">MyContext.Provider</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{[<span style="color:#a6e22e">textContext</span>, <span style="color:#a6e22e">setTextContext</span>]}&gt;
+          {<span style="color:#75715e">/* 此时Parent组件便可以使用useContext接收到两个参数：初始值（&#39;123&#39;）和函数setTextContext */</span>}
+      &lt;<span style="color:#f92672">Parent</span> /&gt;
+    &lt;/<span style="color:#f92672">MyContext.Provider</span>&gt;
+  )
+</code></pre></div><p><strong><code>useContext()</code>总是在调用它的组件<em>上方</em>寻找最近的提供者。它向上搜索并且不考虑您从中调用的组件中的提供程序<code>useContext()</code>。</strong></p>
+<p>所以要小心你的provider是否<strong>嵌套</strong>，看一个demo试试</p>
+<h2 id="useref">useRef（）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ref</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#a6e22e">initialValue</span>)
+</code></pre></div><p><code>useRef</code>在组件的顶层调用以声明一个或多个<a href="https://beta.reactjs.org/learn/referencing-values-with-refs">refs</a>。</p>
+<p>useRef返回一个具有<strong>单个属性的ref 对象</strong>，该属性最初设置为您提供的初始值。<strong>current</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Stopwatch</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">intervalRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#ae81ff">0</span>);
+  <span style="color:#75715e">// ...
+</span></code></pre></div><p>通过使用 ref，您可以确保：</p>
+<ul>
+<li>您可以在多次渲染之间<strong>存储信息。</strong>（与在每次渲染时重置的常规变量不同。）</li>
+<li>更改它<strong>不会触发重新渲染</strong>。（与触发重新渲染的状态变量不同。）</li>
+<li>该<strong>信息</strong>对于组件内所有子组件都是可读的。（与外部的变量不同，它们是共享的。）</li>
+</ul>
+<p>更改 ref 不会触发重新渲染，因此 ref 不适合存储显示类的信息。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Counter</span>() {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ref</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#ae81ff">0</span>);
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+    <span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">current</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;You clicked &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">ref</span>.<span style="color:#a6e22e">current</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; times!&#39;</span>);
+  }
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}&gt;
+      <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">me</span><span style="color:#f92672">!</span>
+    &lt;/<span style="color:#f92672">button</span>&gt;
+  );
+}
+</code></pre></div><h3 id="使用-ref-操作-dom">使用 ref 操作 DOM</h3>
+<p>使用 ref 来操作<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API">DOM</a>尤其常见。<strong>React 对此有内置支持</strong>。</p>
+<p>首先，声明一个初始值为的ref 对象：<code>null</code></p>
+<p>然后将您的 ref 对象作为<code>ref</code>属性传递给您要操作的 DOM 节点的 JSX：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyComponent</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">inputRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">inputRef</span>} /&gt;;
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Form</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">inputRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+    <span style="color:#a6e22e">inputRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">focus</span>();
+  }
+
+  <span style="color:#66d9ef">return</span> (
+    &lt;&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">inputRef</span>} /&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}&gt;
+        <span style="color:#a6e22e">Focus</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">input</span>
+      &lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/&gt;
+  );
+}
+
+</code></pre></div><p>正因为对DOM的操作频繁，我们更希望在一次使用后继续保存ref对象。所以我建议初始化以null初始，然后用if对ref做判断之后再，创建对象或赋值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Video</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">playerRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+	<span style="color:#75715e">//而不是一开始就创建useRef(new VideoPlayer())
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPlayer</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">playerRef</span>.<span style="color:#a6e22e">current</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">playerRef</span>.<span style="color:#a6e22e">current</span>;
+    }
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">VideoPlayer</span>();
+    <span style="color:#a6e22e">playerRef</span>.<span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">player</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">player</span>;
+  }
+</code></pre></div><h3 id="组件内传递ref">组件内传递Ref</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">forwardRef</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MyInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">forwardRef</span>(({ <span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">onChange</span> }, <span style="color:#a6e22e">ref</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">input</span>
+      <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">value</span>}
+      <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">onChange</span>}
+      <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">ref</span>}
+    /&gt;
+  );
+};
+<span style="color:#75715e">//父组件中：
+</span><span style="color:#75715e">//const inputRef = useRef(null);
+</span><span style="color:#75715e">// return &lt;MyInput ref={inputRef} /&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">MyInput</span>;
+</code></pre></div>
+  </div>
+</article>
+
+  
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: React导学课1</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+  
+
+  </body>
+</html>

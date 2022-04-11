@@ -22,35 +22,55 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<meta name="description" content="2021.7.04，博客的诞生之日，为什么建这个博客大概有如下原因好吧。" />
 
-<meta name="keywords" content="reflection,
+<meta name="keywords" content="算法学习,
 ">
 
-<meta property="og:title" content="为什么想到要建一个博客" />
-<meta property="og:description" content="2021.7.04，博客的诞生之日，为什么建这个博客大概有如下原因好吧。" />
+<meta property="og:title" content="题解1-两数之和" />
+<meta property="og:description" content="两数之和 题目： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+示例 1：
+输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] &#43; nums[1] == 9 ，返回 [0, 1] 。示例 2：
+输入：nums = [3,2,4], target = 6输出：[1,2]示例 3：
+输入：nums = [3,3], target = 6输出：[0,1]提示：
+2 &lt;= nums.length &lt;= 104-109 &lt;= nums[i] &lt;= 109-109 &lt;= target &lt;= 109只会存在一个有效答案进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &hellip; in &hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zc6666.top/post/reflectionreason/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-07-05T00:00:00+00:00" />
+<meta property="og:url" content="https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-21T00:00:00+00:00" />
 
 
 <meta property="og:site_name" content="Vocanic myBlogger" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="为什么想到要建一个博客"/>
-<meta name="twitter:description" content="2021.7.04，博客的诞生之日，为什么建这个博客大概有如下原因好吧。"/>
+<meta name="twitter:title" content="题解1-两数之和"/>
+<meta name="twitter:description" content="两数之和 题目： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+示例 1：
+输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] &#43; nums[1] == 9 ，返回 [0, 1] 。示例 2：
+输入：nums = [3,2,4], target = 6输出：[1,2]示例 3：
+输入：nums = [3,3], target = 6输出：[0,1]提示：
+2 &lt;= nums.length &lt;= 104-109 &lt;= nums[i] &lt;= 109-109 &lt;= target &lt;= 109只会存在一个有效答案进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &hellip; in &hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束"/>
 
 
-<meta itemprop="name" content="为什么想到要建一个博客">
-<meta itemprop="description" content="2021.7.04，博客的诞生之日，为什么建这个博客大概有如下原因好吧。"><meta itemprop="datePublished" content="2021-07-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-07-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="115">
-<meta itemprop="keywords" content="reflection," />
+<meta itemprop="name" content="题解1-两数之和">
+<meta itemprop="description" content="两数之和 题目： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+示例 1：
+输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] &#43; nums[1] == 9 ，返回 [0, 1] 。示例 2：
+输入：nums = [3,2,4], target = 6输出：[1,2]示例 3：
+输入：nums = [3,3], target = 6输出：[0,1]提示：
+2 &lt;= nums.length &lt;= 104-109 &lt;= nums[i] &lt;= 109-109 &lt;= target &lt;= 109只会存在一个有效答案进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &hellip; in &hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束"><meta itemprop="datePublished" content="2022-01-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="124">
+<meta itemprop="keywords" content="算法学习," />
 
 
-    <title>为什么想到要建一个博客 || Vocanic myBlogger</title>
-    <link rel="canonical" href="https://zc6666.top/post/reflectionreason/" />
+    <title>题解1-两数之和 || Vocanic myBlogger</title>
+    <link rel="canonical" href="https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" />
 
     
 
@@ -247,31 +267,67 @@
   <meta itemprop="author" content="" />
   <meta itemprop="publisher" content="" />
   <meta itemprop="image" content="" />
-  <h1 itemprop="name" id="title">为什么想到要建一个博客</h1>
-  <meta itemprop="headline" content="为什么想到要建一个博客" />
+  <h1 itemprop="name" id="title">题解1-两数之和</h1>
+  <meta itemprop="headline" content="题解1-两数之和" />
   
   <div class="post-tags">
   
-    <a href="https://zc6666.top/tags/reflection/">#reflection</a>&nbsp;
+    <a href="https://zc6666.top/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">#算法学习</a>&nbsp;
   
   </div>
   
   
     
-      <div class="post-date">Created: <span itemprop="datePublished">July 4, 2021</span></div>
-      <div class="post-date">Last Edited: <span itemprop="dateModified">July 5, 2021</span></div>
+      <div class="post-date"><span itemprop="datePublished">January 21, 2022</span></div>
+      <meta itemprop="dateModified" content="January 21, 2022"/>
     
   
   
   <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
-    <p>The reason why I wanna establish the blog is mostly that several days ago, I saw many of my classmates having owned their blog.
-And due to the feeling of admiration, I built my first blog as the notes for my study and the experiences I had or will have this afternoon
-. It is also a reason that I wanna improve my English level, so that I would 
-write blogs in English in the most cases.</p>
-<p>The following essays that I would write down will be the sharing experiences for the learning process of Webbased front-end, Java, database, 
-etc.
-The experiences I have will also be uploaded on the blog, including CET-6 or something.</p>
-
+    <h1 id="两数之和">两数之和</h1>
+<h2 id="题目">题目：</h2>
+<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<pre><code>输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+</code></pre><p>示例 2：</p>
+<pre><code>输入：nums = [3,2,4], target = 6
+输出：[1,2]
+</code></pre><p>示例 3：</p>
+<pre><code>输入：nums = [3,3], target = 6
+输出：[0,1]
+</code></pre><p>提示：</p>
+<pre><code>2 &lt;= nums.length &lt;= 104
+-109 &lt;= nums[i] &lt;= 109
+-109 &lt;= target &lt;= 109
+只会存在一个有效答案
+</code></pre><h3 id="进阶你可以想出一个时间复杂度小于-on2-的算法吗">进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？</h3>
+<h2 id="解题思路">解题思路：</h2>
+<p>运用for &hellip; in &hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束</p>
+<h3 id="ps">ps:</h3>
+<p>foreach( ) 的返回结果始终是undefined，所以使用foreach时不能直接在语句内嵌套使用return语句或者break</p>
+<pre><code>
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+ var twoSum = function(nums, target) {
+    const map = new Map()
+    let left = 0
+    for (i in nums){
+            left = target - nums[i]
+            if( map.has(left)){
+                //如果map中之前存入left的值
+                return[map.get(left),i]
+            }
+            map.set(nums[i],i)
+        }
+}
+</code></pre>
   </div>
 </article>
 
@@ -280,13 +336,13 @@ The experiences I have will also be uploaded on the blog, including CET-6 or som
     <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
       <nav class="flex-row">
       
-      <a href="https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/" class="flex-row v-center no-underline"  style="max-width:45%;">
-        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: </span>
+      <a href="https://zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: vue的模板语法</span>
       </a>
       
       
-        <a href="https://zc6666.top/post/introduction/" class="flex-row v-center no-underline" style="max-width: 45%;">
-        <span class="re-underline">Next: My Personal Introduction</span>&nbsp;<span class="text-1p5">→</span>
+        <a href="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: React导学课1</span>&nbsp;<span class="text-1p5">→</span>
         </a>
       
       </nav>

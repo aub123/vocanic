@@ -7,7 +7,63 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React导学课2</title>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</guid>
+      <description>React 导学课2 useContext（） 上下文hook，接受一个上下文对象，并返回当前上下文
+创建上下文：
+import { createContext } from &amp;#39;react&amp;#39;; const MyContext = createContext(&amp;#39;default&amp;#39;); //这里的值是最终的保底值，根据业务类型放个默认值 当前上下文的值由树中调用组件上方的value最近的 prop确定
+&amp;lt;MyContext.Provider value = {???}&amp;gt; {/* 这里的value是想赋给上下文Provider标签域内的value */} &amp;lt;Component1 /&amp;gt; &amp;lt;Component2 /&amp;gt; &amp;lt;/MyContext.Provider&amp;gt; 当最近的MyContext.Provider组件更新时，此hook将触发更新并重新渲染，并将最近的上下文value传递给MyContex提供程序，重新渲染的话仍然会从组件本身开始使用useContext。
+useContext里同时可以传入函数：
+const [textContext, setTextContext] = useState(&amp;#39;123&amp;#39;) return ( &amp;lt;MyContext.Provider value={[textContext, setTextContext]}&amp;gt; {/* 此时Parent组件便可以使用useContext接收到两个参数：初始值（&amp;#39;123&amp;#39;）和函数setTextContext */} &amp;lt;Parent /&amp;gt; &amp;lt;/MyContext.Provider&amp;gt; ) useContext()总是在调用它的组件上方寻找最近的提供者。它向上搜索并且不考虑您从中调用的组件中的提供程序useContext()。
+所以要小心你的provider是否嵌套，看一个demo试试
+useRef（） const ref = useRef(initialValue) useRef在组件的顶层调用以声明一个或多个refs。
+useRef返回一个具有单个属性的ref 对象，该属性最初设置为您提供的初始值。current
+import { useRef } from &amp;#39;react&amp;#39;; function Stopwatch() { const intervalRef = useRef(0); // .</description>
+    </item>
+    
+    <item>
+      <title>React导学课1</title>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</guid>
+      <description>React 导学课 1. React的基本语法 1.1 函数式组件的创建方式 命名规则： React 组件名称必须始终以大写字母开头，而 HTML 标签必须小写
+function Header(){ return ( &amp;lt; &amp;gt; &amp;lt;h1&amp;gt;Hello World!&amp;lt;/h1&amp;gt; &amp;lt;/&amp;gt; ) } const Header = ()=&amp;gt;{ return ( &amp;lt; &amp;gt; &amp;lt;h1&amp;gt; Hello World!&amp;lt;/h1&amp;gt; &amp;lt;/ &amp;gt; ) } 其中用到了Jsx语法，啥是Jsx捏？HTML 语言直接写在 JavaScript 语言之中，不加任何引号，允许 HTML 与 JavaScript 的混写，换个角度就是关于标签的表达式（体会一下）
+&amp;lt;div className=&amp;#34;sidebar&amp;#34; /&amp;gt; Jsx最重要的两点记住就会用：遇到 HTML 标签（以 &amp;lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。
+属性和方法在Jsx里用驼峰实现
+onClick onKeyUp className placeHolder 1.2 组件嵌套 function Header(){ return ( &amp;lt; &amp;gt; &amp;lt;h1&amp;gt;Hello World!</description>
+    </item>
+    
+    <item>
+      <title>题解1-两数之和</title>
+      <link>https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>两数之和 题目： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+你可以按任意顺序返回答案。
+示例 1：
+输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。示例 2：
+输入：nums = [3,2,4], target = 6输出：[1,2]示例 3：
+输入：nums = [3,3], target = 6输出：[0,1]提示：
+2 &amp;lt;= nums.length &amp;lt;= 104-109 &amp;lt;= nums[i] &amp;lt;= 109-109 &amp;lt;= target &amp;lt;= 109只会存在一个有效答案进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &amp;hellip; in &amp;hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束</description>
+    </item>
+    
+    <item>
+      <title>vue的模板语法</title>
+      <link>https://zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</guid>
+      <description> 1.模板语法  1.模板语法   (1) 插值  a. 文本 {{}} b. HTML语句  v-html, 防止xss ，CSRF(  (1) 前端过滤 (2) 后台转义 (3) 给cookie加上属性http   )   c. 表达式    (2) 指令: 是带有v-前缀的特殊属性  v-bind 动态绑定属性 v-if 动态创建、删除 v-show 动态显示、隐藏    </description>
+    </item>
+    
     <item>
       <title>数据库之SQL server的查询操作</title>
       <link>https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</link>
@@ -334,6 +390,15 @@ git add .</description>
       
       <guid>https://zc6666.top/links/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</guid>
+      <description>#</description>
     </item>
     
   </channel>
