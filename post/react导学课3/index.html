@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://zc6666.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zc6666.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zc6666.top/favicon-16x16.png">
+<link rel="manifest" href="https://zc6666.top/site.webmanifest">
+<link rel="mask-icon" href="https://zc6666.top/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="为干事第三次讲解React，继续讲解Hooks的使用" />
+
+<meta name="keywords" content="WEB前端,
+">
+
+<meta property="og:title" content="React导学课3" />
+<meta property="og:description" content="为干事第三次讲解React，继续讲解Hooks的使用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-12T00:00:00+00:00" />
+
+
+<meta property="og:site_name" content="Vocanic myBlogger" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React导学课3"/>
+<meta name="twitter:description" content="为干事第三次讲解React，继续讲解Hooks的使用"/>
+
+
+<meta itemprop="name" content="React导学课3">
+<meta itemprop="description" content="为干事第三次讲解React，继续讲解Hooks的使用"><meta itemprop="datePublished" content="2022-05-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-05-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="214">
+<meta itemprop="keywords" content="WEB前端," />
+
+
+    <title>React导学课3 || Vocanic myBlogger</title>
+    <link rel="canonical" href="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >Vocanic myBlogger</a>
+      <span class="divider">/ </span>
+          <a href="/post/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/post/introduction/">
+              <span class="post-title">Vocanic&#39;s Introduction</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+<script type="text/javascript">
+  function clickEffect() {
+    let balls = [];
+    let longPressed = false;
+    let longPress;
+    let multiplier = 0;
+    let width, height;
+    let origin;
+    let normal;
+    let ctx;
+    const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    const pointer = document.createElement("span");
+    pointer.classList.add("pointer");
+    document.body.appendChild(pointer);
+
+    if (canvas.getContext && window.addEventListener) {
+      ctx = canvas.getContext("2d");
+      updateSize();
+      window.addEventListener('resize', updateSize, false);
+      loop();
+      window.addEventListener("mousedown", function(e) {
+        pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+        document.body.classList.add("is-pressed");
+        longPress = setTimeout(function() {
+          document.body.classList.add("is-longpress");
+          longPressed = true;
+        }, 500);
+      }, false);
+      window.addEventListener("mouseup", function(e) {
+        clearInterval(longPress);
+        if (longPressed == true) {
+          document.body.classList.remove("is-longpress");
+          pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+          longPressed = false;
+        }
+        document.body.classList.remove("is-pressed");
+      }, false);
+      window.addEventListener("mousemove", function(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        pointer.style.top = y + "px";
+        pointer.style.left = x + "px";
+      }, false);
+    } else {
+      console.log("canvas or addEventListener is unsupported!");
+    }
+
+
+    function updateSize() {
+      canvas.width = window.innerWidth * 2;
+      canvas.height = window.innerHeight * 2;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+      width = (canvas.width = window.innerWidth);
+      height = (canvas.height = window.innerHeight);
+      origin = {
+        x: width / 2,
+        y: height / 2
+      };
+      normal = {
+        x: width / 2,
+        y: height / 2
+      };
+    }
+    class Ball {
+      constructor(x = origin.x, y = origin.y) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.PI * 2 * Math.random();
+        if (longPressed == true) {
+          this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+        } else {
+          this.multiplier = randBetween(6, 12);
+        }
+        this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+        this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+        this.r = randBetween(8, 12) + 3 * Math.random();
+        this.color = colours[Math.floor(Math.random() * colours.length)];
+      }
+      update() {
+        this.x += this.vx - normal.x;
+        this.y += this.vy - normal.y;
+        normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+        normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+        this.r -= 0.3;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+      }
+    }
+
+    function pushBalls(count = 1, x = origin.x, y = origin.y) {
+      for (let i = 0; i < count; i++) {
+        balls.push(new Ball(x, y));
+      }
+    }
+
+    function randBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.r < 0) continue;
+        ctx.fillStyle = b.color;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        b.update();
+      }
+      if (longPressed == true) {
+        multiplier += 0.2;
+      } else if (!longPressed && multiplier >= 0) {
+        multiplier -= 0.4;
+      }
+      removeBall();
+      requestAnimationFrame(loop);
+    }
+
+    function removeBall() {
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+          balls.splice(i, 1);
+        }
+      }
+    }
+  }
+  clickEffect();
+</script>
+
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">React导学课3</h1>
+  <meta itemprop="headline" content="React导学课3" />
+  
+  <div class="post-tags">
+  
+    <a href="https://zc6666.top/tags/web%E5%89%8D%E7%AB%AF/">#WEB前端</a>&nbsp;
+  
+  </div>
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">May 12, 2022</span></div>
+      <meta itemprop="dateModified" content="May 12, 2022"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <ul>
+<li><a href="#usereducerreducer-initialarg-init"><code>useReducer(reducer, initialArg, init?)</code></a>
+<ul>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC">返回值</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
+<li><a href="#%E8%A7%84%E8%8C%83">规范</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E5%AF%B9%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81%E8%BF%9B%E8%A1%8C%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97">避免对初始状态进行直接计算</a></li>
+<li><a href="#usecontext%E5%92%8Cusereducer%E7%BB%84%E5%90%88%E4%BB%A3%E6%9B%BFredux%E6%9D%A5%E7%AE%A1%E7%90%86%E7%8A%B6%E6%80%81">useContext()和useReducer()组合代替Redux来管理状态</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="usereducerreducer-initialarg-init"><code>useReducer(reducer, initialArg, init?)</code></h1>
+<p><code>useReducer</code>在组件的顶层调用以使用<a href="https://beta.reactjs.org/learn/extracting-state-logic-into-a-reducer">reducer</a>管理state。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useReducer</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reducer</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) {
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyComponent</span>() {
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(<span style="color:#a6e22e">reducer</span>, { <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span> });
+  <span style="color:#75715e">// ...
+</span></code></pre></div><h2 id="参数">参数</h2>
+<ul>
+<li><code>reducer</code>: 指定状态如何更新的 reducer 函数。纯函数，应该将状态和动作作为参数，并且应该返回下一个状态。state和action可以是任何类型。</li>
+<li><code>initialArg</code>: 计算初始状态的值。它可以是任何类型的值。如何从中计算初始状态取决于下一个<code>init</code>参数。</li>
+<li><strong>optional</strong> <code>init</code> : 指定如何计算初始状态的初始化函数。如果未指定，则初始状态设置为<code>initialArg</code>. 否则，初始状态设置为调用的结果<code>init(initialArg)</code>。</li>
+</ul>
+<h2 id="返回值">返回值</h2>
+<p><code>useReducer</code>返回一个两个值的数组：</p>
+<ol>
+<li>当前state。在第一次渲染期间，它被设置为<code>init(initialArg)</code>or <code>initialArg</code>（如果没有<code>init</code>）。</li>
+<li>dispatch函数，将状态更新为不同的值并触发重新渲染。</li>
+</ol>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li><code>useReducer</code>是一个 Hook，所以你只能<strong>在组件的顶层</strong>或自己的 Hooks 中调用。不能在循环或条件中调用它。如果需要，请提取一个新组件并将状态移动到其中。</li>
+<li>在严格模式下，React 会<strong>调用你的 reducer 和 initializer 两次</strong>，以保证结果正确。这是仅限开发的行为，不会影响生产。所以这对我们的 reducer 和 initializer 提出了要求，即必须是纯函数，这样的话就不影响你的组件的逻辑。如果函数不纯，即两次获得的返回值不同的话，就会在两个值中二选一，忽略其中一个调用的结果，这往往是我们不想看到的结果。</li>
+</ul>
+<h2 id="规范">规范</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"> <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;incremented_age&#39;</span><span style="color:#f92672">:</span> {
+      <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">name</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#75715e">//不建议直接更改状态
+</span><span style="color:#75715e"></span>      };
+    }
+         
+ <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;incremented_age&#39;</span><span style="color:#f92672">:</span> {
+      <span style="color:#75715e">// ✅ Instead, return a new object
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> {
+        ...<span style="color:#a6e22e">state</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#75715e">//正确姿势
+</span><span style="color:#75715e"></span>      };
+</code></pre></div><h2 id="避免对初始状态进行直接计算">避免对初始状态进行直接计算</h2>
+<p>初始状态保存一次，下一次渲染时忽略。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createInitialState</span>(<span style="color:#a6e22e">username</span>) {
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">TodoList</span>({ <span style="color:#a6e22e">username</span> }) {
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#a6e22e">createInitialState</span>(<span style="color:#a6e22e">username</span>));
+  <span style="color:#75715e">// ...
+</span></code></pre></div><p>如果按上述代码运行，在每次渲染时调用 createInitialState(username)函数。在创建大型数组或执行大量计算的情况下，效率就会变的很低</p>
+<p>为了解决这个问题，将计算过程作为<strong>初始化函数</strong>传递给<code>useReducer</code>第三个参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createInitialState</span>(<span style="color:#a6e22e">username</span>) {
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">TodoList</span>({ <span style="color:#a6e22e">username</span> }) {
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">createInitialState</span>);
+  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>传递的是<strong>函数本身</strong>，而不是createInitialState()。初始化后不会重新创建初始状态。</p>
+<p>在上面的例子中，<code>createInitialState</code>接受一个<code>username</code>参数。如果不需要任何信息，只需要第三函数的返回值来作为state，可以将<code>null</code>其作为第二个参数传递给<code>useReducer</code>.</p>
+<h2 id="usecontext和usereducer组合代替redux来管理状态">useContext()和useReducer()组合代替Redux来管理状态</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-react" data-lang="react"><span style="color:#75715e">// reducer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reducer</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">action</span>) =&gt; {
+  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">type</span>) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;change&#39;</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">color</span>
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">state</span>  
+  }
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 创建一个 Color 组件
+</span><span style="color:#75715e"> * Color 组件包裹的所有组件都可以访问到 value
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">props</span> =&gt; {
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">color</span>, <span style="color:#a6e22e">dispatch</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useReducer</span>(<span style="color:#a6e22e">reducer</span>, <span style="color:#e6db74">&#39;blue&#39;</span>)
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">ColorContext.Provider</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">color</span>, <span style="color:#a6e22e">dispatch</span>}}&gt;
+      {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">children</span>}
+    &lt;/<span style="color:#f92672">ColorContext.Provider</span>&gt;
+  );
+};
+</code></pre></div><p>意思就是，将<code>useContext()</code>作为穿透作用域的工具，里面传入<code>useReducer()</code></p>
+<p>使用<code>useReducer()</code>来对状态进行初始化和操作管理</p>
+
+  </div>
+</article>
+
+  
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: React导学课2</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+  
+
+  </body>
+</html>

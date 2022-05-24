@@ -272,7 +272,7 @@
 <p>1.当我们写一段如下的代码时：</p>
 </blockquote>
 <pre><code>	var a = 3;  
-	document.write('a');  
+	document.write(a);  
 </code></pre><blockquote>
 <blockquote>
 <p>根据我们之前所学的知识，我们很容易知道会输出一个：</p>
@@ -299,7 +299,7 @@
 <blockquote>
 <p>3.下面让我们看第三种情况：</p>
 </blockquote>
-<pre><code>	document.write('a');	
+<pre><code>	document.write(a);	
 	var a = 3;
 </code></pre><blockquote>
 <blockquote>
@@ -312,7 +312,7 @@
 其实，是变量的声明发生了提升，你可以理解为，将<strong>a的定义提前了</strong>：</p>
 </blockquote>
 <pre><code>	var a;
-	document.write('a');
+	document.write(a);
 	a = 3;
 </code></pre><blockquote>
 <p>进行了如上的操作。以上就是变量提升的说明啦！</p>

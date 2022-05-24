@@ -2,18 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vocanic myBlogger</title>
-    <link>https://blog.zc6666.top/</link>
+    <link>https://zc6666.top/</link>
     <description>Recent content on Vocanic myBlogger</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React导学课3</title>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/</guid>
+      <description>useReducer(reducer, initialArg, init?)  参数 返回值 注意事项 规范 避免对初始状态进行直接计算 useContext()和useReducer()组合代替Redux来管理状态    useReducer(reducer, initialArg, init?) useReducer在组件的顶层调用以使用reducer管理state。
+import { useReducer } from &amp;#39;react&amp;#39;; function reducer(state, action) { // ... } function MyComponent() { const [state, dispatch] = useReducer(reducer, { age: 42 }); // ... 参数  reducer: 指定状态如何更新的 reducer 函数。纯函数，应该将状态和动作作为参数，并且应该返回下一个状态。state和action可以是任何类型。 initialArg: 计算初始状态的值。它可以是任何类型的值。如何从中计算初始状态取决于下一个init参数。 optional init : 指定如何计算初始状态的初始化函数。如果未指定，则初始状态设置为initialArg. 否则，初始状态设置为调用的结果init(initialArg)。  返回值 useReducer返回一个两个值的数组：
+ 当前state。在第一次渲染期间，它被设置为init(initialArg)or initialArg（如果没有init）。 dispatch函数，将状态更新为不同的值并触发重新渲染。  注意事项  useReducer是一个 Hook，所以你只能在组件的顶层或自己的 Hooks 中调用。不能在循环或条件中调用它。如果需要，请提取一个新组件并将状态移动到其中。 在严格模式下，React 会调用你的 reducer 和 initializer 两次，以保证结果正确。这是仅限开发的行为，不会影响生产。所以这对我们的 reducer 和 initializer 提出了要求，即必须是纯函数，这样的话就不影响你的组件的逻辑。如果函数不纯，即两次获得的返回值不同的话，就会在两个值中二选一，忽略其中一个调用的结果，这往往是我们不想看到的结果。  规范 switch (action.</description>
+    </item>
+    
     <item>
       <title>React导学课2</title>
-      <link>https://blog.zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</link>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</link>
       <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</guid>
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</guid>
       <description>React 导学课2 useContext（） 上下文hook，接受一个上下文对象，并返回当前上下文
 创建上下文：
 import { createContext } from &amp;#39;react&amp;#39;; const MyContext = createContext(&amp;#39;default&amp;#39;); //这里的值是最终的保底值，根据业务类型放个默认值 当前上下文的值由树中调用组件上方的value最近的 prop确定
@@ -28,10 +39,10 @@ import { useRef } from &amp;#39;react&amp;#39;; function Stopwatch() { const int
     
     <item>
       <title>React导学课1</title>
-      <link>https://blog.zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</link>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</guid>
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE/</guid>
       <description>React 导学课 1. React的基本语法 1.1 函数式组件的创建方式 命名规则： React 组件名称必须始终以大写字母开头，而 HTML 标签必须小写
 function Header(){ return ( &amp;lt; &amp;gt; &amp;lt;h1&amp;gt;Hello World!&amp;lt;/h1&amp;gt; &amp;lt;/&amp;gt; ) } const Header = ()=&amp;gt;{ return ( &amp;lt; &amp;gt; &amp;lt;h1&amp;gt; Hello World!&amp;lt;/h1&amp;gt; &amp;lt;/ &amp;gt; ) } 其中用到了Jsx语法，啥是Jsx捏？HTML 语言直接写在 JavaScript 语言之中，不加任何引号，允许 HTML 与 JavaScript 的混写，换个角度就是关于标签的表达式（体会一下）
 &amp;lt;div className=&amp;#34;sidebar&amp;#34; /&amp;gt; Jsx最重要的两点记住就会用：遇到 HTML 标签（以 &amp;lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。
@@ -41,75 +52,37 @@ onClick onKeyUp className placeHolder 1.2 组件嵌套 function Header(){ return
     
     <item>
       <title>题解1-两数之和</title>
-      <link>https://blog.zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <link>https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
       <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <guid>https://zc6666.top/post/%E9%A2%98%E8%A7%A31-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
       <description>两数之和 题目： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
 你可以按任意顺序返回答案。
 示例 1：
-输入：nums = [2,7,11,15], target = 9
-输出：[0,1]
-解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
-示例 2：
-输入：nums = [3,2,4], target = 6
-输出：[1,2]
-示例 3：
-输入：nums = [3,3], target = 6
-输出：[0,1]
-提示：
-2 &amp;lt;= nums.length &amp;lt;= 104
--109 &amp;lt;= nums[i] &amp;lt;= 109
--109 &amp;lt;= target &amp;lt;= 109
-只会存在一个有效答案
-进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &amp;hellip; in &amp;hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束</description>
-    </item>
-    
-    <item>
-      <title>vue的模板语法</title>
-      <link>https://blog.zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</guid>
-      <description> 1.模板语法  1.模板语法   (1) 插值  a. 文本 {{}} b. HTML语句  v-html, 防止xss ，CSRF(  (1) 前端过滤 (2) 后台转义 (3) 给cookie加上属性http   )   c. 表达式    (2) 指令: 是带有v-前缀的特殊属性  v-bind 动态绑定属性 v-if 动态创建、删除 v-show 动态显示、隐藏    </description>
+输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。示例 2：
+输入：nums = [3,2,4], target = 6输出：[1,2]示例 3：
+输入：nums = [3,3], target = 6输出：[0,1]提示：
+2 &amp;lt;= nums.length &amp;lt;= 104-109 &amp;lt;= nums[i] &amp;lt;= 109-109 &amp;lt;= target &amp;lt;= 109只会存在一个有效答案进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？ 解题思路： 运用for &amp;hellip; in &amp;hellip;循环遍历数组每个元素，用target-当前元素的值作为关键字去搜索是否在map中存在；如果没找到的话，把当前值和索引存入map，直至找到目标值or循环结束</description>
     </item>
     
     <item>
       <title>数据库之SQL server的查询操作</title>
-      <link>https://blog.zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</link>
+      <link>https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>https://zc6666.top/post/sqlserver%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</guid>
       <description>SQLSERVER的查询操作  3.4单表的数据查询  3.4.1无条件查询 3.4.2条件查询  多重条件（包含AND、OR、NOT） 确定范围（BETWEEN…AND） 确定集合（IN） 字符匹配（LIKE）   3.4.3常用聚合函数 3.4.4分组查询 3.4.5查询结果的排序   3.5多表的连接查询  3.5.1内连接查询 3.5.2外连接查询 3.5.3交叉查询   3.6子查询  3.6.1普通子查询  返回一个值的普通子查询 返回一组值的普通子查询   3.6.2相关子查询 3.6.3其他类型查询  集合运算查询(union) 存储查询结果到表中(select…into)        SQLSERVER的查询操作 3.4单表的数据查询 创建一个基本表，如下：
-create table Student
-(
-s_no char(6) primary key,
-class_no char(6) not null,
-s_name varchar(10) not null,
-s_sex char(2) check(s_sex = &#39;男&#39; or s_sex = &#39;女&#39;),
-s_birthday datetime )
-   s_no class_no s_name s_sex s_birthday99120     991201 js0001 徐辉 女 1978-08-01 00:00:00.</description>
+create table Student(s_no char(6) primary key,class_no char(6) not null,s_name varchar(10) not null,s_sex char(2) check(s_sex = &#39;男&#39; or s_sex = &#39;女&#39;),s_birthday datetime )   s_no class_no s_name s_sex s_birthday99120     991201 js0001 徐辉 女 1978-08-01 00:00:00.</description>
     </item>
     
     <item>
       <title>SQL Server的基本数据定义</title>
-      <link>https://blog.zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</link>
+      <link>https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</guid>
-      <description>SQL Server的基本数据定义 
-SQL Server的基本数据定义
-创建基本表——create table
-表结构的修改——ALTERTABLE
-删除基本表——DROPTABLE
-创建索引——CREATEINDEX
-删除索引——DROPINDEX
-
-
-
-
-创建基本表——create table   语句的基本格式   create table &amp;lt;表名&amp;gt;(&amp;lt;列定义清单&amp;gt;)
+      <guid>https://zc6666.top/post/sql-server%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/</guid>
+      <description>SQL Server的基本数据定义 SQL Server的基本数据定义创建基本表——create table表结构的修改——ALTERTABLE删除基本表——DROPTABLE创建索引——CREATEINDEX删除索引——DROPINDEX创建基本表——create table   语句的基本格式   create table &amp;lt;表名&amp;gt;(&amp;lt;列定义清单&amp;gt;)
  说明：   (1) 表名不能有重复（更严格的说是两个关系之间不能有同名，包括视图）
 (2) 列定义清单内定义所有属性列的结构情况，内容包括: &amp;lt;列名&amp;gt;&amp;lt;数据结构&amp;gt;[&amp;lt;默认值&amp;gt;|&amp;lt;标识列设置&amp;gt;][&amp;lt;完整性约束&amp;gt;] （方括号中为选填项）
 (3) &amp;lt;列名&amp;gt;规定该列属性名称，不能有两个同名列。
@@ -132,10 +105,10 @@ ALTERTABLE语句的基本格式如下：   ALTERTABLE&amp;lt;表名&amp;gt;
     
     <item>
       <title>码,主码,候选码,外码以及关系的完整性</title>
-      <link>https://blog.zc6666.top/post/%E7%A0%81%E4%B8%BB%E7%A0%81%E5%80%99%E9%80%89%E7%A0%81%E5%A4%96%E7%A0%81%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7/</link>
+      <link>https://zc6666.top/post/%E7%A0%81%E4%B8%BB%E7%A0%81%E5%80%99%E9%80%89%E7%A0%81%E5%A4%96%E7%A0%81%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E7%A0%81%E4%B8%BB%E7%A0%81%E5%80%99%E9%80%89%E7%A0%81%E5%A4%96%E7%A0%81%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7/</guid>
+      <guid>https://zc6666.top/post/%E7%A0%81%E4%B8%BB%E7%A0%81%E5%80%99%E9%80%89%E7%A0%81%E5%A4%96%E7%A0%81%E4%BB%A5%E5%8F%8A%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7/</guid>
       <description>码,主码,候选码,外码以及关系的完整性 关系的码: 1.候选码:
  候选码是能够唯一标识关系中某一个元组的一个属性或属性集,也叫候选键,如:学生关系中,学号可以唯一标识学生,班级+姓名也可以唯一标识一个学生, 学号和(班级,姓名)都是候选码
 候选码需要满足:
@@ -160,31 +133,26 @@ ALTERTABLE语句的基本格式如下：   ALTERTABLE&amp;lt;表名&amp;gt;
     
     <item>
       <title>JS中的函数声明整体和变量声明提升</title>
-      <link>https://blog.zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</link>
+      <link>https://zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</guid>
+      <guid>https://zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</guid>
       <description>#JS中的变量声明提升和函数声明整体提升#
 JS算是学习前端的小萌新们必须要走的一项难关，其中变量和函数提升是JS中很别具一格的特点。由于JS 的预编译特性，所以函数和变量的编译顺序发生了一丢丢和视图不一样的改变。下面让我们一起来学习一下：
 首先记住一个宗旨：函数声明会整体提升；变量则是声明提升
 一、先看变量的提升：
  1.当我们写一段如下的代码时：
- 	var a = 3; document.write(&#39;a&#39;);   根据我们之前所学的知识，我们很容易知道会输出一个：
+ 	var a = 3; document.write(a);   根据我们之前所学的知识，我们很容易知道会输出一个：
   	3  2.当代码删去对a的声明时，变成如下时候：
- 	document.write(a);
-  我们会得到一个ERROR的结果
+ 	document.write(a);  我们会得到一个ERROR的结果
    上面两种情况都是很基础的内容：
  第一种因为上面对a有了定义声明并赋值，所以下面可以打印出来；
 第二种因为之前没有对a的定义声明，所以出现了未定义的变量从而出现错误。
    3.下面让我们看第三种情况：
- 	document.write(&#39;a&#39;);	var a = 3;
-  我们此时惊奇地发现:
+ 	document.write(a);	var a = 3;  我们此时惊奇地发现:
    打印的操作并未出现错误，但是a的值也并未传到页面中。这又是为什么呢？
 其实，是变量的声明发生了提升，你可以理解为，将a的定义提前了：
- 	var a;
-document.write(&#39;a&#39;);
-a = 3;
- 进行了如上的操作。以上就是变量提升的说明啦！
+ 	var a;document.write(a);a = 3; 进行了如上的操作。以上就是变量提升的说明啦！
  二、函数声明整体提升：
  我们可以看到：虽然我们的函数在执行语句的后面，但是函数依旧被执行，并没有报错。
 这是因为在HTML加载时，&amp;lt; script&amp;gt; 中的function(也就是我们的函数)，会被整体提升到开头先进行加载，加载完毕后，再进行其他语句(如执行语句)的进行。 以上就是我对函数声明整体提升和变量声明提升的解释说明了。</description>
@@ -192,10 +160,10 @@ a = 3;
     
     <item>
       <title>数据绪论笔记</title>
-      <link>https://blog.zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</link>
+      <link>https://zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://zc6666.top/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%AA%E8%AE%BA%E7%AC%94%E8%AE%B0/</guid>
       <description>数据绪论笔记 一、基本概念：
  1.数据： 描述事务的符号记录。可用文字、图形等多种形式表示，经数字化处理后可存入计算机。
 2.数据库(DB): 按一定的数据模型组织、描述和存储在计算机内的、有组织的、可共享的数据集合。
@@ -225,10 +193,10 @@ a = 3;
     
     <item>
       <title>9.22数据库课程设计</title>
-      <link>https://blog.zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
+      <link>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>https://zc6666.top/post/9.22%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
       <description>#9.22数据库课程设计
 一.课程要求
   概念结构设计和逻辑结构设计 SQL语言编程实现数据库建立应用和维护   二. 设计要求
@@ -245,10 +213,10 @@ a = 3;
     
     <item>
       <title>MIT算法导论合集</title>
-      <link>https://blog.zc6666.top/post/mit%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%90%88%E9%9B%86/</link>
+      <link>https://zc6666.top/post/mit%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%90%88%E9%9B%86/</link>
       <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/mit%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%90%88%E9%9B%86/</guid>
+      <guid>https://zc6666.top/post/mit%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E5%90%88%E9%9B%86/</guid>
       <description>B站也有视频，也可以去我的b站账号看同款视频：
 https://www.bilibili.com/video/BV1vL411J7Za
 视频就放在下面了，需要的可以自己看:
@@ -281,10 +249,10 @@ https://www.bilibili.com/video/BV1vL411J7Za
     
     <item>
       <title>使用jQuery的animate()制作自定义动画</title>
-      <link>https://blog.zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</link>
+      <link>https://zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</guid>
+      <guid>https://zc6666.top/post/jquery-%E7%9A%84animate%E5%8A%A9%E4%BD%A0%E5%81%9A%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB/</guid>
       <description>用animate()函数做动画效果 值得提起注意的是，这篇博客其实是为了充字数，给那些前端新手写的，所以大佬们请先移步去看别的article
  前言引入
 animate()函数在我看来，实质上是对JS进行CSS修改操作的简化，animate()支持所有css属性的修改。机制是：
@@ -295,33 +263,8 @@ params 参数定义形成动画的 CSS 属性,即你想实现的修改后的CSS�
 speed(可填可不填) 参数规定效果的时长。它可以取以下值：&amp;ldquo;slow&amp;rdquo;、&amp;ldquo;fast&amp;rdquo; 或毫秒。
 callback(可填可不填) 参数是动画完成后所执行的函数名称。
    举个实例:
- 效果演示
-
- $(document).ready(function(){
-$(&#34;button#bDemo&#34;).click(function(){
-$(&#34;div#divDemo&#34;).animate({left:&#34;120px&#34;,opacity:&#34;0.5&#34;},&#34;slow&#34;);
-$(&#34;div#divDemo&#34;).animate({fontSize:&#34;5em&#34;},&#34;slow&#34;);
-});
-});
-
-开始动画
-vocanic
-&amp;lt;div&amp;gt;
-&amp;lt;h3&amp;gt;效果演示&amp;lt;/h3&amp;gt;
-&amp;lt;br&amp;gt;
-&amp;lt;script src=&amp;quot;jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script&amp;gt; $(document).ready(function(){
-$(&amp;quot;button#bDemo&amp;quot;).click(function(){
-$(&amp;quot;div#divDemo&amp;quot;).animate({left:&amp;quot;170px&amp;quot;,opacity:&amp;quot;0.5&amp;quot;},&amp;quot;slow&amp;quot;);
-$(&amp;quot;div#divDemo&amp;quot;).animate({fontSize:&amp;quot;5em&amp;quot;},&amp;quot;slow&amp;quot;);
-});
-});
-&amp;lt;/script&amp;gt;
-&amp;lt;button id=&amp;quot;bDemo&amp;quot;&amp;gt;开始动画&amp;lt;/button&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
-&amp;lt;div id=&amp;quot;divDemo&amp;quot; style=&amp;quot;background:#98bf21;height:100px;width:210px;
-position:relative;&amp;quot;&amp;gt;vocanic&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-  值得注意的是:animate()函数可以先后顺序使用，从而造成更加神奇的视觉效果。
+ 效果演示 $(document).ready(function(){$(&#34;button#bDemo&#34;).click(function(){$(&#34;div#divDemo&#34;).animate({left:&#34;120px&#34;,opacity:&#34;0.5&#34;},&#34;slow&#34;);$(&#34;div#divDemo&#34;).animate({fontSize:&#34;5em&#34;},&#34;slow&#34;);});});开始动画
+vocanic&amp;lt;div&amp;gt;&amp;lt;h3&amp;gt;效果演示&amp;lt;/h3&amp;gt;&amp;lt;br&amp;gt;&amp;lt;script src=&amp;quot;jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt; $(document).ready(function(){$(&amp;quot;button#bDemo&amp;quot;).click(function(){$(&amp;quot;div#divDemo&amp;quot;).animate({left:&amp;quot;170px&amp;quot;,opacity:&amp;quot;0.5&amp;quot;},&amp;quot;slow&amp;quot;);$(&amp;quot;div#divDemo&amp;quot;).animate({fontSize:&amp;quot;5em&amp;quot;},&amp;quot;slow&amp;quot;);});});&amp;lt;/script&amp;gt;&amp;lt;button id=&amp;quot;bDemo&amp;quot;&amp;gt;开始动画&amp;lt;/button&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div id=&amp;quot;divDemo&amp;quot; style=&amp;quot;background:#98bf21;height:100px;width:210px;position:relative;&amp;quot;&amp;gt;vocanic&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;  值得注意的是:animate()函数可以先后顺序使用，从而造成更加神奇的视觉效果。
 这种先后顺序又被称作为队列
 还有就是jQuery库的show()，hide()和toggle()也是被支持放入animate({})内的
   </description>
@@ -329,10 +272,10 @@ position:relative;&amp;quot;&amp;gt;vocanic&amp;lt;/div&amp;gt;
     
     <item>
       <title>实现用wordcloud&#43;jieba&#43;python制作中文词汇云图</title>
-      <link>https://blog.zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
+      <link>https://zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</link>
       <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
+      <guid>https://zc6666.top/post/jieba-wordcloud-python%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E8%AF%8D%E4%BA%91%E7%BB%98%E5%88%B6/</guid>
       <description>首先是安装教程：
  https://pypi.org/
 点击这个链接分别下载自己对应版本的wordcloud和jieba的包
@@ -349,64 +292,25 @@ python -m pip install --upgrade pip
     jieba:
  把你下载好的压缩包打开把jieba 这一文件夹放置在python安装目录下的site-packages文件夹下就可以了：
   然后是代码环节了,依然是废话不多说,直接上代码：
-import imageio
-import jieba
-import matplotlib.pyplot as plt
-import numpy as np
-from PIL import Image
-from wordcloud import WordCloud
-file_path = &#39;日报.txt&#39;
-background_image = np.array(Image.open(&#39;img_2.png&#39;))
-with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f: # 读取文件
-essay = f.</description>
+import imageioimport jiebaimport matplotlib.pyplot as pltimport numpy as npfrom PIL import Imagefrom wordcloud import WordCloudfile_path = &#39;日报.txt&#39;background_image = np.array(Image.open(&#39;img_2.png&#39;))with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f: # 读取文件essay = f.</description>
     </item>
     
     <item>
       <title>如何用Turtle库画出一坨粑粑</title>
-      <link>https://blog.zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
+      <link>https://zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</link>
       <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
+      <guid>https://zc6666.top/post/%E7%94%A8turtle-%E5%BA%93%E4%BC%98%E9%9B%85%E5%9C%B0%E7%94%BB%E5%87%BA%E4%B8%80%E5%9D%A8%E7%B2%91%E7%B2%91/</guid>
       <description>这篇文章教你如何用Turtle库画出一坨粑粑 首先，你需要的工具有：Pycharm(集成环境&amp;amp;编译器),Phython 3.x 废话不多说代码贴图：
-import turtle #导入Turtle库
-turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色
-turtle.begin_fill() #开始填充
-turtle.pensize(2) #海龟的腰围
-turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色
-turtle.penup() #海龟飞起，不留痕迹
-turtle.fd(-50) #海龟向左移动50单位
-turtle.pendown() #海龟落下，开始痕迹
-turtle.fd(100) #向右100单位
-turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三
-turtle.fd(50)
-turtle.fd(-30)
-turtle.circle(-15,-180)
-turtle.fd(-15)
-turtle.circle(10,140)
-turtle.fd(20)
-turtle.circle(1,160)
-turtle.fd(16)
-turtle.circle(-1,120)
-turtle.fd(25)
-turtle.circle(10,180)
-turtle.fd(10)
-turtle.fd(-20)
-turtle.circle(-15,-180)
-turtle.fd(-30)
-turtle.fd(47)
-turtle.circle(16,152)
-turtle.pendown()
-turtle.end_fill() #最后进行包裹区域的填充
-turtle.done() #海龟全程结束
-</description>
+import turtle #导入Turtle库turtle.color(&amp;quot;#DAA520&amp;quot;) #填充颜色turtle.begin_fill() #开始填充turtle.pensize(2) #海龟的腰围turtle.pencolor(&amp;quot;#FFCC00&amp;quot;) #海龟路径的颜色turtle.penup() #海龟飞起，不留痕迹turtle.fd(-50) #海龟向左移动50单位turtle.pendown() #海龟落下，开始痕迹turtle.fd(100) #向右100单位turtle.circle(18,180) #18半径，180度 #以下代码注释省略举一反三turtle.fd(50)turtle.fd(-30)turtle.circle(-15,-180)turtle.fd(-15)turtle.circle(10,140)turtle.fd(20)turtle.circle(1,160)turtle.fd(16)turtle.circle(-1,120)turtle.fd(25)turtle.circle(10,180)turtle.fd(10)turtle.fd(-20)turtle.circle(-15,-180)turtle.fd(-30)turtle.fd(47)turtle.circle(16,152)turtle.pendown()turtle.end_fill() #最后进行包裹区域的填充turtle.done() #海龟全程结束</description>
     </item>
     
     <item>
       <title>Git 的命令行常见使用总结</title>
-      <link>https://blog.zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <link>https://zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://zc6666.top/post/git%E7%9A%84%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
       <description>Git 的常用命令  一、已有一个仓库，想把本地项目push到仓库内该这样做：
  1.在本地仓库目录的cmd内输入以下命令：
  git init 进行初始化本地仓库
@@ -433,10 +337,10 @@ git add .</description>
     
     <item>
       <title>正则表达式的总结</title>
-      <link>https://blog.zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+      <link>https://zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://zc6666.top/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
       <description>基础语法
  /正则表达式主体/修饰符(可选)
  常见的正则情况
@@ -453,19 +357,17 @@ git add .</description>
 (?=.**[a-z]+$) 在字符某一位置存在a-z的字符
 {8.16}$ 规定密码长度在8-16位
  之前改上网认证正则写过一个实例
- function pswTest() { //对密码强度进行验证，大小写字母，特殊字符，数字，四选三，在8位数以上
-var psw = document.getElementsByName(&amp;quot;password&amp;quot;)[0].value; var testPassword = /^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{8,}$/; if (testPassword.test(psw) === false){ alert(&amp;quot;修改密码后再尝试登录&amp;quot;); return false; }else return true; //函数返回的是一个布尔值，需要在JS主体对返回值进行判断 //然后进行相关操作
-}    正则看起来很乱，但其实还是有规律可循的。
+ function pswTest() { //对密码强度进行验证，大小写字母，特殊字符，数字，四选三，在8位数以上var psw = document.getElementsByName(&amp;quot;password&amp;quot;)[0].value; var testPassword = /^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\W_]+$)(?![a-z0-9]+$)(?![a-z\W_]+$)(?![0-9\W_]+$)[a-zA-Z0-9\W_]{8,}$/; if (testPassword.test(psw) === false){ alert(&amp;quot;修改密码后再尝试登录&amp;quot;); return false; }else return true; //函数返回的是一个布尔值，需要在JS主体对返回值进行判断 //然后进行相关操作}    正则看起来很乱，但其实还是有规律可循的。
 最重要的还是在写代码之前把自己的逻辑理清楚，核心思想就是排列组合的穷举方法，把该判断的情况都列出来。
 最后加上一些主体函数的操作就能实现正则的验证。</description>
     </item>
     
     <item>
       <title>My Personal Introduction</title>
-      <link>https://blog.zc6666.top/post/introduction/</link>
+      <link>https://zc6666.top/post/introduction/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/introduction/</guid>
+      <guid>https://zc6666.top/post/introduction/</guid>
       <description>火山 vocanic   studys in the Computer School of HDU,
   is one of the REDHOME members and also the Deputy director of the Office in HDU sports club.
   loves singing and watching movies, is optimistic, outgoing and always ready to make new friends.
@@ -476,28 +378,28 @@ var psw = document.getElementsByName(&amp;quot;password&amp;quot;)[0].value; var
     
     <item>
       <title>为什么想到要建一个博客</title>
-      <link>https://blog.zc6666.top/post/reflectionreason/</link>
+      <link>https://zc6666.top/post/reflectionreason/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/reflectionreason/</guid>
+      <guid>https://zc6666.top/post/reflectionreason/</guid>
       <description>The reason why I wanna establish the blog is mostly that several days ago, I saw many of my classmates having owned their blog. And due to the feeling of admiration, I built my first blog as the notes for my study and the experiences I had or will have this afternoon . It is also a reason that I wanna improve my English level, so that I would write blogs in English in the most cases.</description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>https://blog.zc6666.top/links/</link>
+      <link>https://zc6666.top/links/</link>
       <pubDate>Sun, 04 Jul 2021 00:16:16 +0800</pubDate>
       
-      <guid>https://blog.zc6666.top/links/</guid>
+      <guid>https://zc6666.top/links/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://blog.zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</link>
+      <link>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</guid>
       <description>#</description>
     </item>
     

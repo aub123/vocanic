@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/tags/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/tags/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React导学课3</title>
+      <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE3/</guid>
+      <description>useReducer(reducer, initialArg, init?)  参数 返回值 注意事项 规范 避免对初始状态进行直接计算 useContext()和useReducer()组合代替Redux来管理状态    useReducer(reducer, initialArg, init?) useReducer在组件的顶层调用以使用reducer管理state。
+import { useReducer } from &amp;#39;react&amp;#39;; function reducer(state, action) { // ... } function MyComponent() { const [state, dispatch] = useReducer(reducer, { age: 42 }); // ... 参数  reducer: 指定状态如何更新的 reducer 函数。纯函数，应该将状态和动作作为参数，并且应该返回下一个状态。state和action可以是任何类型。 initialArg: 计算初始状态的值。它可以是任何类型的值。如何从中计算初始状态取决于下一个init参数。 optional init : 指定如何计算初始状态的初始化函数。如果未指定，则初始状态设置为initialArg. 否则，初始状态设置为调用的结果init(initialArg)。  返回值 useReducer返回一个两个值的数组：
+ 当前state。在第一次渲染期间，它被设置为init(initialArg)or initialArg（如果没有init）。 dispatch函数，将状态更新为不同的值并触发重新渲染。  注意事项  useReducer是一个 Hook，所以你只能在组件的顶层或自己的 Hooks 中调用。不能在循环或条件中调用它。如果需要，请提取一个新组件并将状态移动到其中。 在严格模式下，React 会调用你的 reducer 和 initializer 两次，以保证结果正确。这是仅限开发的行为，不会影响生产。所以这对我们的 reducer 和 initializer 提出了要求，即必须是纯函数，这样的话就不影响你的组件的逻辑。如果函数不纯，即两次获得的返回值不同的话，就会在两个值中二选一，忽略其中一个调用的结果，这往往是我们不想看到的结果。  规范 switch (action.</description>
+    </item>
+    
     <item>
       <title>React导学课2</title>
       <link>https://zc6666.top/post/react%E5%AF%BC%E5%AD%A6%E8%AF%BE2/</link>
@@ -40,15 +51,6 @@ onClick onKeyUp className placeHolder 1.2 组件嵌套 function Header(){ return
     </item>
     
     <item>
-      <title>vue的模板语法</title>
-      <link>https://zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://zc6666.top/post/vue%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/</guid>
-      <description> 1.模板语法  1.模板语法   (1) 插值  a. 文本 {{}} b. HTML语句  v-html, 防止xss ，CSRF(  (1) 前端过滤 (2) 后台转义 (3) 给cookie加上属性http   )   c. 表达式    (2) 指令: 是带有v-前缀的特殊属性  v-bind 动态绑定属性 v-if 动态创建、删除 v-show 动态显示、隐藏    </description>
-    </item>
-    
-    <item>
       <title>JS中的函数声明整体和变量声明提升</title>
       <link>https://zc6666.top/post/js%E9%A2%84%E7%BC%96%E8%AF%91/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
@@ -59,17 +61,17 @@ JS算是学习前端的小萌新们必须要走的一项难关，其中变量和
 首先记住一个宗旨：函数声明会整体提升；变量则是声明提升
 一、先看变量的提升：
  1.当我们写一段如下的代码时：
- 	var a = 3; document.write(&#39;a&#39;);   根据我们之前所学的知识，我们很容易知道会输出一个：
+ 	var a = 3; document.write(a);   根据我们之前所学的知识，我们很容易知道会输出一个：
   	3  2.当代码删去对a的声明时，变成如下时候：
  	document.write(a);  我们会得到一个ERROR的结果
    上面两种情况都是很基础的内容：
  第一种因为上面对a有了定义声明并赋值，所以下面可以打印出来；
 第二种因为之前没有对a的定义声明，所以出现了未定义的变量从而出现错误。
    3.下面让我们看第三种情况：
- 	document.write(&#39;a&#39;);	var a = 3;  我们此时惊奇地发现:
+ 	document.write(a);	var a = 3;  我们此时惊奇地发现:
    打印的操作并未出现错误，但是a的值也并未传到页面中。这又是为什么呢？
 其实，是变量的声明发生了提升，你可以理解为，将a的定义提前了：
- 	var a;document.write(&#39;a&#39;);a = 3; 进行了如上的操作。以上就是变量提升的说明啦！
+ 	var a;document.write(a);a = 3; 进行了如上的操作。以上就是变量提升的说明啦！
  二、函数声明整体提升：
  我们可以看到：虽然我们的函数在执行语句的后面，但是函数依旧被执行，并没有报错。
 这是因为在HTML加载时，&amp;lt; script&amp;gt; 中的function(也就是我们的函数)，会被整体提升到开头先进行加载，加载完毕后，再进行其他语句(如执行语句)的进行。 以上就是我对函数声明整体提升和变量声明提升的解释说明了。</description>
