@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://zc6666.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zc6666.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zc6666.top/favicon-16x16.png">
+<link rel="manifest" href="https://zc6666.top/site.webmanifest">
+<link rel="mask-icon" href="https://zc6666.top/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="开始入门机器学习了，今天看机器学习是什么" />
+
+<meta name="keywords" content="机器学习,
+">
+
+<meta property="og:title" content="机器学习概述——机器学习是什么" />
+<meta property="og:description" content="开始入门机器学习了，今天看机器学习是什么" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-13T00:00:00+00:00" />
+
+
+<meta property="og:site_name" content="Vocanic myBlogger" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="机器学习概述——机器学习是什么"/>
+<meta name="twitter:description" content="开始入门机器学习了，今天看机器学习是什么"/>
+
+
+<meta itemprop="name" content="机器学习概述——机器学习是什么">
+<meta itemprop="description" content="开始入门机器学习了，今天看机器学习是什么"><meta itemprop="datePublished" content="2022-07-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-07-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="146">
+<meta itemprop="keywords" content="机器学习," />
+
+
+    <title>机器学习概述——机器学习是什么 || Vocanic myBlogger</title>
+    <link rel="canonical" href="https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style type="text/css">
+      .fireworks {
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    </style>
+    <canvas class="fireworks"></canvas>
+    <script src="/themes/paperesque/js/anime.min.js"></script>
+    <script src="/themes/paperesque/js/fireworks.js"></script>
+    <script type="text/javascript">
+      fireworks.setCanvasSize();
+    </script>
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >Vocanic myBlogger</a>
+      <span class="divider">/ </span>
+          <a href="/post/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/post/introduction/">
+              <span class="post-title">Vocanic&#39;s Introduction</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+<script type="text/javascript">
+  function clickEffect() {
+    let balls = [];
+    let longPressed = false;
+    let longPress;
+    let multiplier = 0;
+    let width, height;
+    let origin;
+    let normal;
+    let ctx;
+    const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    const pointer = document.createElement("span");
+    pointer.classList.add("pointer");
+    document.body.appendChild(pointer);
+
+    if (canvas.getContext && window.addEventListener) {
+      ctx = canvas.getContext("2d");
+      updateSize();
+      window.addEventListener('resize', updateSize, false);
+      loop();
+      window.addEventListener("mousedown", function(e) {
+        pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+        document.body.classList.add("is-pressed");
+        longPress = setTimeout(function() {
+          document.body.classList.add("is-longpress");
+          longPressed = true;
+        }, 500);
+      }, false);
+      window.addEventListener("mouseup", function(e) {
+        clearInterval(longPress);
+        if (longPressed == true) {
+          document.body.classList.remove("is-longpress");
+          pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+          longPressed = false;
+        }
+        document.body.classList.remove("is-pressed");
+      }, false);
+      window.addEventListener("mousemove", function(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        pointer.style.top = y + "px";
+        pointer.style.left = x + "px";
+      }, false);
+    } else {
+      console.log("canvas or addEventListener is unsupported!");
+    }
+
+
+    function updateSize() {
+      canvas.width = window.innerWidth * 2;
+      canvas.height = window.innerHeight * 2;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+      width = (canvas.width = window.innerWidth);
+      height = (canvas.height = window.innerHeight);
+      origin = {
+        x: width / 2,
+        y: height / 2
+      };
+      normal = {
+        x: width / 2,
+        y: height / 2
+      };
+    }
+    class Ball {
+      constructor(x = origin.x, y = origin.y) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.PI * 2 * Math.random();
+        if (longPressed == true) {
+          this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+        } else {
+          this.multiplier = randBetween(6, 12);
+        }
+        this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+        this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+        this.r = randBetween(8, 12) + 3 * Math.random();
+        this.color = colours[Math.floor(Math.random() * colours.length)];
+      }
+      update() {
+        this.x += this.vx - normal.x;
+        this.y += this.vy - normal.y;
+        normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+        normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+        this.r -= 0.3;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+      }
+    }
+
+    function pushBalls(count = 1, x = origin.x, y = origin.y) {
+      for (let i = 0; i < count; i++) {
+        balls.push(new Ball(x, y));
+      }
+    }
+
+    function randBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.r < 0) continue;
+        ctx.fillStyle = b.color;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        b.update();
+      }
+      if (longPressed == true) {
+        multiplier += 0.2;
+      } else if (!longPressed && multiplier >= 0) {
+        multiplier -= 0.4;
+      }
+      removeBall();
+      requestAnimationFrame(loop);
+    }
+
+    function removeBall() {
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+          balls.splice(i, 1);
+        }
+      }
+    }
+  }
+  clickEffect();
+</script>
+
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">机器学习概述——机器学习是什么</h1>
+  <meta itemprop="headline" content="机器学习概述——机器学习是什么" />
+  
+  <div class="post-tags">
+  
+    <a href="https://zc6666.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">#机器学习</a>&nbsp;
+  
+  </div>
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">July 13, 2022</span></div>
+      <meta itemprop="dateModified" content="July 13, 2022"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <h1 id="机器学习是什么">机器学习是什么</h1>
+<p>[TOC]</p>
+<h2 id="11-人工智能概述">1.1 人工智能概述</h2>
+<h3 id="人工智能起源">人工智能起源</h3>
+<ul>
+<li>​    图灵测试</li>
+<li>​    达特茅斯会议</li>
+</ul>
+<h3 id="人工智能的发展经历的3个阶段">人工智能的发展经历的3个阶段</h3>
+<ol>
+<li>​    1980年是正式成型期，尚不具备影响力</li>
+<li>​    1990-2010年代是蓬勃发展期，诞生了众多的理论和算法，真正走向了实用</li>
+<li>​    2012年之后是深度学习期，深度学习技术诞生并急速发展，较好的解决了现阶段AI的一些重点问题，并带来了产业界的快速发展</li>
+</ol>
+<h2 id="12-人工智能主要分支">1.2 人工智能主要分支</h2>
+<h3 id="人工智能机器学习和深度学习">人工智能、机器学习和深度学习</h3>
+<p>人工智能和机器学习，深度学习的关系: 机器学习是人工智能的一个实现途径 深度学习是机器学习的一个方法(神经网络)发展而来​​</p>
+<h4 id="主要分支介绍">主要分支介绍：</h4>
+<p>通讯、感知与行动是现代人工智能的三个关键能力，在这里我们将根据这些能力/应用对这三个技术领域进行介绍：计算机视觉(CV)、自然语言处理(NLP)和机器人。在NLP领域中，将覆盖文本挖掘/分类、机器翻译和语音识别。</p>
+<ul>
+<li>
+<h5 id="分支一计算机视觉">分支一：计算机视觉</h5>
+<p>计算机视觉(CV)是指机器感知环境的能力。这一技术类别中的经典任务有图像形成，图像处理，图像提取，和图像的三维推理。物体检测和人脸识别是其比较成功的研究领域。</p>
+</li>
+<li>
+<h5 id="分支二-语音识别">分支二: 语音识别</h5>
+<p>语音识别是指识别语音(说出的语音)并将其转换成对应文本的技术。相反的任务(文本转语音/TTS)也是这一领域内一个类似的研究主题。</p>
+</li>
+<li>
+<h5 id="分支三文本挖掘分类">分支三：文本挖掘/分类</h5>
+<p>这里的文本挖掘主要是指文本分类，该技术可用于理解、组织和分类结构化或非结构化文本文档。其涵盖的主要任务有句法分析、情绪分析和垃圾信息检测。</p>
+</li>
+<li>
+<h5 id="分支四机器翻译">分支四：机器翻译</h5>
+<p>机器翻译(MT)是利用机器的力量自动将一种自然语音(源语音)的文本翻译成另一种语音(目标语音)。机器翻译方法通常可分为三大类：基于规则的机器翻译(RBMT)、统计机器翻译(SMT)和神经机器翻译(NMT)。</p>
+</li>
+<li>
+<h5 id="分支五-机器人">分支五: 机器人</h5>
+<p>机器人学(Robotics)研究的是机器人的设计、制造、运行和应用，以及控制它们的计算机系统、传感反馈和信息处理</p>
+<p>机器人可以分为两大类：固定机器人和移动机器人。固定机器人通常被用于工业生产(比如用于装配线)。常见的移动机器人应用有货运机器人、空中机器人和自动载具。机器人需要不同部件和系统的协作才能实现最优的作业。其中在硬件上包含传感器、反应器和控制器；另外还有能够实现感知能力的软件，比如定位、地图测绘和目标识别。</p>
+</li>
+</ul>
+<h4 id="人工智能发展必备三要素">人工智能发展必备三要素</h4>
+<p>数据、算法、计算力</p>
+<p>逐层、分布、并行算法能力提升</p>
+<p>GPU、FPGA、TPU能力大幅度提升</p>
+<h4 id="扩展">扩展:</h4>
+<p>GPU与CPU对比:</p>
+<ul>
+<li>CPU – IO密集型</li>
+<li>GPU – 计算密集型</li>
+</ul>
+<p>Q:什么类型的程序适合在GPU上运行</p>
+<p>A:计算密集型的程序。所谓计算密集型的程序，就是其大部分运行时间花在了寄存器上运算的，寄存器的速度和处理器的速度相当，从寄存器读写数据几乎没有延时，可以做一下对比，读内存的延迟大概是几百个时钟周期，读硬盘速度就不说了，即便是SSD，也实在是太慢了
+易于并行的程序。GPU其实是做一种SIMD架构，他有成百上千个核，每一个核在同一时间最好能做同样的事情。</p>
+<h2 id="13-机器学习工作流程">1.3 机器学习工作流程</h2>
+<h3 id="什么是机器学习">什么是机器学习</h3>
+<p>机器学习是从数据中自动分析获得模型，并利用模型对未知数据进行预测</p>
+<h3 id="机器学习工作流程">机器学习工作流程：</h3>
+<ol>
+<li><strong>获取数据</strong></li>
+<li><strong>数据基本处理</strong></li>
+<li><strong>特征工程</strong></li>
+<li><strong>机器学习(模型训练)</strong></li>
+<li><strong>模型评估</strong></li>
+<li><strong>获取到的数据集介绍</strong></li>
+</ol>
+<p><strong>数据简介</strong></p>
+<p>​	在数据集中一般:
+​		一行数据我们称为一个样本</p>
+<p>​		一列数据我们成为一个特征</p>
+<p>​		有些数据有目标值(标签值)，有些数据没有目标值</p>
+<ul>
+<li>
+<p>数据类型构成:
+数据类型一: 特征值 + 目标值(目标值是连续的和离散的)
+数据类型二: 只有特征值，没有目标值</p>
+</li>
+<li>
+<p>数据分割:
+机器学习一般的数据集会划分为两个部分:
+训练数据: 用于训练，构建模型
+测试数据: 在模型检验时使用，用于评估模型是否有效</p>
+</li>
+<li>
+<p>划分比例：
+训练集: 70% 80% 75%
+测试集: 30% 20% 25%</p>
+</li>
+<li>
+<p>数据基本处理</p>
+</li>
+</ul>
+<p>​		即对数进行缺失值、去除异常值等处理</p>
+<p><strong>特征工程</strong>
+把数据转换成机器更容易识别的数据
+（特征工程是使用专业背景知识和技巧处理数据，使得特征能在机器学习算法上发挥更好的作用的过程。）</p>
+<p><strong>为什么需要特征工程:</strong>
+数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。</p>
+<p><strong>特征工程包含内容</strong></p>
+<ol>
+<li>特征提取：
+将任意数据(如文本或图像)转换为可用于机器学习的数字特征</li>
+<li>特征预处理：
+通过一些转换函数将特征数据转成更加适合算法模型的特征数据的过程</li>
+<li>特征降维：
+指在某些限定条件下，降低随机变量(特征)个数，得到一组&quot;不相关&quot; 主变量的过程</li>
+</ol>
+<p><strong>机器学习</strong></p>
+<p>选择合适的算法对模型进行训练</p>
+<p><strong>模型评估</strong></p>
+<p>对训练好的模型进行评估</p>
+<h2 id="14完整机器学习流程">1.4完整机器学习流程</h2>
+<h3 id="抽象成数学问题">抽象成数学问题</h3>
+<p>明确问题是进行机器学习的第一步。机器学习的特征工程和模型训练通常都是一件非常耗时的过程，胡乱尝试时间成本是非常高的。
+这里的抽象成数学问题，指的明确我们可以获得怎样的数据，抽象出的问题，是一个分类还是回归或者聚类的问题。</p>
+<h3 id="获取数据">获取数据</h3>
+<p>数据决定机器学习结果的上限，而算法只是尽可能的逼近这个上限
+数据要有代表性，否则必然会过拟合
+对于分类问题，数据偏斜不能过于严重，不同类别的数据数量不要有数个数量级的差距。
+而且还要对数据的量级有一个评估，多少个样本，多少个特征，可以估算出其对内存的消耗程度，判断训练过程中内存是否能够放得下，如果放不下就得考虑改进算法或者使用一些降维的技巧了，如果数据量实在是太大，那就要考虑分布式了。</p>
+<h3 id="特征工程">特征工程</h3>
+<p>特征工程是非常能体现一个机器学习者的功底的。
+特征工程包括从原始数据中特征构建、特征提取、特征选择，非常有讲究。深入理解实际业务场景下的问题，丰富的机器学习经验能帮助我们更好的处理特征工程。特征工程做的好能发挥原始数据的最大效力，往往能够使得算法的效果和性能得到显著的提升，有时能使简单的模型的效果比复杂的模型效果好。
+数据预处理、数据清洗是很关键的步骤，往往能够使得算法的效果和性能得到显著提高。归一化、离散化、因子化、缺失值处理、去除共线性等，数据挖掘过程中很多时间就花在它们上面。这些工作简单可复制，收益稳定可预期，是机器学习的基础必备步骤。
+筛选出显著特征、摒弃非显著特征，需要机器学习工程师反复理解业务。这对很多结果有决定性的影响。特征选择需要运用特征有效性分析的相关技术，如相关系数、卡方检验、平均互信息、条件熵、后验概率、逻辑回归权重等方法。</p>
+<h4 id="模型训练诊断与调优">模型训练、诊断与调优</h4>
+<p>直到这一步才用到我们上面说的算法进行训练，现在很多算法都能够封装成黑盒供人使用，使用非常方便，真正考验水平的根据对算法的理解调节（超）参数，使模型达到最优。这需要我们对算法的原理有深入的理解，理解越深入，就越能发现问题的症结，提出良好的调优方案。</p>
+<h4 id="模型诊断">模型诊断</h4>
+<p>模型验证和误差分析也是机器学习中非常重要的一步。
+通过测试数据，验证模型的有效性，通过观察误差样本，分析误差产生的原因（是参数的问题还是算法选择的问题，是特征的问题还是数据本身的问题 …），往往能使得我们找到提升算法性能的突破点。
+误差分析主要是分析出误差来源于 算法 、 特征 、数据。
+模型融合
+工程上，提升算法的准确度主要方法是模型的前端（特征工程、清洗、预处理、采样）和后端的模型融合。因为他们比较标准可复制，效果比较稳定。而直接调参的工作不会很多，毕竟大量数据训练起来太慢了，而且效果难以保证。
+模型融合的方法，主要包括一人一票的统一融合，线性融合和堆融合。
+在机器学习中模型融合非常常见，基本都能使得效果有一定的提升，而且效果很好。
+上线运行</p>
+<p>模型在线上运行的效果直接决定模型的成败。不单纯包括其准确程度、误差等情况，还包括其运行的速度(时间复杂度)、资源消耗程度（空间复杂度）、稳定性是否可接受</p>
+<p>——<strong>转载于51CTO</strong></p>
+
+  </div>
+</article>
+
+  
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://zc6666.top/post/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 深拷贝与浅拷贝详解</span>
+      </a>
+      
+      
+        <a href="https://zc6666.top/post/%E8%80%83%E7%A0%94%E6%97%A5%E8%AE%B007/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: CANN的考研日记-7月</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
+      
+      </nav>
+    </div>
+  
+
+  </body>
+</html>

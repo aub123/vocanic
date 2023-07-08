@@ -7,7 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2011-2020 Fabian Tamp</copyright>
-    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zc6666.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CANN的考研日记-7月</title>
+      <link>https://zc6666.top/post/%E8%80%83%E7%A0%94%E6%97%A5%E8%AE%B007/</link>
+      <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E8%80%83%E7%A0%94%E6%97%A5%E8%AE%B007/</guid>
+      <description>CANN的考研日记-7月  CANN的考研日记-7月  数学 英语 专业课 友链    数学 还止步在基础阶段。。。。。。
+线代的结论可真TM多，今天做了880的方程组和特征向量（线代四五章），正确率巨低，陷入了一种焦虑，甚至直接想拿简历投实习了。
+不过忍忍就过去了，付出总会有收获的。
+英语 常规背单词中，目前还没有打算做题的开始。
+专业课 整理计组的第三章（存储系统），学了学cpp，南科大于老师的cpp我吹爆，讲的太好了
+友链 CANN的计算机学习日记</description>
+    </item>
+    
+    <item>
+      <title>机器学习概述——机器学习是什么</title>
+      <link>https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/</guid>
+      <description>机器学习是什么 [TOC]
+1.1 人工智能概述 人工智能起源  ​ 图灵测试 ​ 达特茅斯会议  人工智能的发展经历的3个阶段  ​ 1980年是正式成型期，尚不具备影响力 ​ 1990-2010年代是蓬勃发展期，诞生了众多的理论和算法，真正走向了实用 ​ 2012年之后是深度学习期，深度学习技术诞生并急速发展，较好的解决了现阶段AI的一些重点问题，并带来了产业界的快速发展  1.2 人工智能主要分支 人工智能、机器学习和深度学习 人工智能和机器学习，深度学习的关系: 机器学习是人工智能的一个实现途径 深度学习是机器学习的一个方法(神经网络)发展而来​​
+主要分支介绍： 通讯、感知与行动是现代人工智能的三个关键能力，在这里我们将根据这些能力/应用对这三个技术领域进行介绍：计算机视觉(CV)、自然语言处理(NLP)和机器人。在NLP领域中，将覆盖文本挖掘/分类、机器翻译和语音识别。
+  分支一：计算机视觉 计算机视觉(CV)是指机器感知环境的能力。这一技术类别中的经典任务有图像形成，图像处理，图像提取，和图像的三维推理。物体检测和人脸识别是其比较成功的研究领域。
+  分支二: 语音识别 语音识别是指识别语音(说出的语音)并将其转换成对应文本的技术。相反的任务(文本转语音/TTS)也是这一领域内一个类似的研究主题。
+  分支三：文本挖掘/分类 这里的文本挖掘主要是指文本分类，该技术可用于理解、组织和分类结构化或非结构化文本文档。其涵盖的主要任务有句法分析、情绪分析和垃圾信息检测。
+  分支四：机器翻译 机器翻译(MT)是利用机器的力量自动将一种自然语音(源语音)的文本翻译成另一种语音(目标语音)。机器翻译方法通常可分为三大类：基于规则的机器翻译(RBMT)、统计机器翻译(SMT)和神经机器翻译(NMT)。
+  分支五: 机器人 机器人学(Robotics)研究的是机器人的设计、制造、运行和应用，以及控制它们的计算机系统、传感反馈和信息处理
+机器人可以分为两大类：固定机器人和移动机器人。固定机器人通常被用于工业生产(比如用于装配线)。常见的移动机器人应用有货运机器人、空中机器人和自动载具。机器人需要不同部件和系统的协作才能实现最优的作业。其中在硬件上包含传感器、反应器和控制器；另外还有能够实现感知能力的软件，比如定位、地图测绘和目标识别。
+  人工智能发展必备三要素 数据、算法、计算力
+逐层、分布、并行算法能力提升
+GPU、FPGA、TPU能力大幅度提升
+扩展: GPU与CPU对比:
+ CPU – IO密集型 GPU – 计算密集型  Q:什么类型的程序适合在GPU上运行
+A:计算密集型的程序。所谓计算密集型的程序，就是其大部分运行时间花在了寄存器上运算的，寄存器的速度和处理器的速度相当，从寄存器读写数据几乎没有延时，可以做一下对比，读内存的延迟大概是几百个时钟周期，读硬盘速度就不说了，即便是SSD，也实在是太慢了 易于并行的程序。GPU其实是做一种SIMD架构，他有成百上千个核，每一个核在同一时间最好能做同样的事情。</description>
+    </item>
+    
     <item>
       <title>深拷贝与浅拷贝详解</title>
       <link>https://zc6666.top/post/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
@@ -15,7 +52,8 @@
       
       <guid>https://zc6666.top/post/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       <description>十分钟从0到1掌握深浅拷贝 引入 在做算法题或者在写业务时，难免会碰到二维数组的创建和使用。在刚学习JS的时候，笔者使用二维数组就遇到了百思不得其解的问题 刚学习JS时我是这样做的
-const arr = new Array(3).fill(new Array(3).fill(0))console.log(arr)RUN  function rundata(){//获取输入框内的数据const text = document.getElementById(&#39;inputdata&#39;).value;// 先清空iframelet iframe = document.getElementById(&#34;iframe1&#34;).contentWindow.document.body.innerText = &#34;&#34;;//将输入框内的数据传给iframeiframe = document.getElementById(&#39;iframe1&#39;).contentDocument.write(text);}在上述操作中，我创建了一个3x3的二维数组</description>
+const arr = new Array(3).fill(new Array(3).fill(0)) console.log(arr)  &amp;lt;button id=&amp;ldquo;rundata&amp;rdquo; οnclick=&amp;ldquo;rundata()&amp;quot;&amp;gt;RUN
+ function rundata(){//获取输入框内的数据var text = document.getElementById(&#39;inputdata&#39;).value;// 先清空iframevar iframe = document.getElementById(&#34;iframe1&#34;).contentWindow.document.body.innerText = &#34;&#34;;//将输入框内的数据传给iframeiframe = document.getElementById(&#39;iframe1&#39;).contentDocument.write(text);}  </description>
     </item>
     
     <item>
@@ -393,15 +431,6 @@ git add .</description>
       
       <guid>https://zc6666.top/post/reflectionreason/</guid>
       <description>The reason why I wanna establish the blog is mostly that several days ago, I saw many of my classmates having owned their blog. And due to the feeling of admiration, I built my first blog as the notes for my study and the experiences I had or will have this afternoon . It is also a reason that I wanna improve my English level, so that I would write blogs in English in the most cases.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</guid>
-      <description>#</description>
     </item>
     
   </channel>

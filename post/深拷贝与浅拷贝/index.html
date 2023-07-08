@@ -45,7 +45,7 @@
 <meta itemprop="name" content="深拷贝与浅拷贝详解">
 <meta itemprop="description" content="项目中经常会碰到一些数据操作，其中免不了遇到深拷贝与浅拷贝的问题"><meta itemprop="datePublished" content="2022-05-22T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-05-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="33">
+<meta itemprop="wordCount" content="34">
 <meta itemprop="keywords" content="WEB前端," />
 
 
@@ -268,23 +268,22 @@
 <h2 id="引入">引入</h2>
 <p>在做算法题或者在写业务时，难免会碰到二维数组的创建和使用。在刚学习JS的时候，笔者使用二维数组就遇到了百思不得其解的问题
 刚学习JS时我是这样做的</p>
-<textarea rows="10" cols="35" id="inputdata">
-const arr = new Array(3).fill(new Array(3).fill(0))
-console.log(arr)
-</textarea>
-<button id="rundata" οnclick="rundata()"> RUN </button>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">3</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">3</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">0</span>))
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>)
+</code></pre></div><p><textarea rows="10" cols="35" id="inputdata"></textarea>
+&lt;button id=&ldquo;rundata&rdquo; οnclick=&ldquo;rundata()&quot;&gt;RUN</button></p>
 <iframe id="iframe1"></iframe>  
 <script type="text/javascript">
-    function rundata(){
-        //获取输入框内的数据
-        const text = document.getElementById('inputdata').value;
-        // 先清空iframe
-        let iframe = document.getElementById("iframe1").contentWindow.document.body.innerText = "";
-        //将输入框内的数据传给iframe
-        iframe = document.getElementById('iframe1').contentDocument.write(text);
-        }
-</script>
-<p>在上述操作中，我创建了一个3x3的二维数组</p>
+            function rundata(){
+                //获取输入框内的数据
+                var text = document.getElementById('inputdata').value;
+                // 先清空iframe
+                var iframe = document.getElementById("iframe1").contentWindow.document.body.innerText = "";
+                //将输入框内的数据传给iframe
+                iframe = document.getElementById('iframe1').contentDocument.write(text);
+               }
+</script><blockquote>
+</blockquote>
 
   </div>
 </article>
@@ -299,7 +298,9 @@ console.log(arr)
       </a>
       
       
-        <span class="flex-row v-center"></span>
+        <a href="https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: 机器学习概述——机器学习是什么</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
       
       </nav>
     </div>

@@ -2,19 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zc6666.top/categories/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <loc>https://zc6666.top/post/%E8%80%83%E7%A0%94%E6%97%A5%E8%AE%B007/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zc6666.top/categories/js/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <loc>https://zc6666.top/categories/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zc6666.top/post/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zc6666.top/tags/</loc>
-    <lastmod>2022-05-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zc6666.top/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/tags/%E8%80%83%E7%A0%94/</loc>
+    <lastmod>2023-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/categories/machine-learning/</loc>
+    <lastmod>2022-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2022-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zc6666.top/categories/js/</loc>
     <lastmod>2022-05-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zc6666.top/tags/web%E5%89%8D%E7%AB%AF/</loc>
@@ -106,7 +124,5 @@
   </url><url>
     <loc>https://zc6666.top/links/</loc>
     <lastmod>2021-07-04T00:16:16+08:00</lastmod>
-  </url><url>
-    <loc>https://zc6666.top/post/%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B51%E6%80%BB%E7%BB%93/</loc>
   </url>
 </urlset>

@@ -15,7 +15,8 @@
       
       <guid>https://zc6666.top/post/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       <description>十分钟从0到1掌握深浅拷贝 引入 在做算法题或者在写业务时，难免会碰到二维数组的创建和使用。在刚学习JS的时候，笔者使用二维数组就遇到了百思不得其解的问题 刚学习JS时我是这样做的
-const arr = new Array(3).fill(new Array(3).fill(0))console.log(arr)RUN  function rundata(){//获取输入框内的数据const text = document.getElementById(&#39;inputdata&#39;).value;// 先清空iframelet iframe = document.getElementById(&#34;iframe1&#34;).contentWindow.document.body.innerText = &#34;&#34;;//将输入框内的数据传给iframeiframe = document.getElementById(&#39;iframe1&#39;).contentDocument.write(text);}在上述操作中，我创建了一个3x3的二维数组</description>
+const arr = new Array(3).fill(new Array(3).fill(0)) console.log(arr)  &amp;lt;button id=&amp;ldquo;rundata&amp;rdquo; οnclick=&amp;ldquo;rundata()&amp;quot;&amp;gt;RUN
+ function rundata(){//获取输入框内的数据var text = document.getElementById(&#39;inputdata&#39;).value;// 先清空iframevar iframe = document.getElementById(&#34;iframe1&#34;).contentWindow.document.body.innerText = &#34;&#34;;//将输入框内的数据传给iframeiframe = document.getElementById(&#39;iframe1&#39;).contentDocument.write(text);}  </description>
     </item>
     
     <item>
